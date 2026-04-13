@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E8AC5D1-5C33-4E94-A66B-EC65BBDE7DDE}</ProjectGuid>
+    <ProjectGuid>{93830389-0C44-4449-AB9B-4AC7E1C711B4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ABM_CATALOGO</RootNamespace>
-    <AssemblyName>ABM_CATALOGO</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <RootNamespace>TPWinForm_equipo_8A</RootNamespace>
+    <AssemblyName>TPWinForm_equipo-8A</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

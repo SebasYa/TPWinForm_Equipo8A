@@ -1,4 +1,4 @@
-﻿namespace ABM_CATALOGO
+﻿namespace TPWinForm_equipo_8A
 {
     partial class Form1
     {
