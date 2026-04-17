@@ -53,5 +53,24 @@ namespace negocio
                 conexion.Close();
             }
         }
+
+        internal void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+        internal void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
