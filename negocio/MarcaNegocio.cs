@@ -25,7 +25,7 @@ namespace negocio
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
-                    listar.add(aux);
+                    lista.add(aux);
                 }
 
                 return lista;
