@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select * FROM MARCAS");
+                datos.setearConsulta("Select Id, Descripcion FROM MARCAS");
                 datos.ejecutarLectura();
 
                 while(datos.Lector.Read())
@@ -79,26 +79,24 @@ namespace negocio
             }
         }
 
-        // HAY QUE VER LAS RESTRICCIONES FOREANEAS PARA PODER ELIMINAR
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM MARCAS WHERE Id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
-        //public void eliminar(int id)
-        //{
-        //    AccesoDatos datos = new AccesoDatos();
-        //    try
-        //    {
-        //        datos.setearConsulta("DELETE FROM MARCAS WHERE Id = @id");
-        //        datos.setearParametro("@id", id);
-        //        datos.ejecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        datos.cerrarConexion();
-        //    }
-        //}
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
