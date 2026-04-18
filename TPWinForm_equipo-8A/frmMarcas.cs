@@ -57,5 +57,26 @@ namespace TPWinForm_equipo_8A
             modificar.ShowDialog();
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+            Marca seleccionado;
+            try
+            {
+                DialogResult resp = MessageBox.Show("¿Eliminar marca? Esta acción es permanente y no se puede deshacer.", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resp == DialogResult.Yes)
+                {
+                    seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
