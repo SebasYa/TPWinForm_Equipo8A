@@ -25,8 +25,22 @@ namespace TPWinForm_equipo_8A
 
         private void frmMarcas_Load(object sender, EventArgs e)
         {
-            MarcaNegocio negocio = new MarcaNegocio();
-            dgvMarcas.DataSource = negocio.listar();
+            try
+            {
+                MarcaNegocio negocio = new MarcaNegocio();
+                dgvMarcas.DataSource = negocio.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            frmAltaMarca alta = new frmAltaMarca();
+            alta.ShowDialog();
         }
     }
 }

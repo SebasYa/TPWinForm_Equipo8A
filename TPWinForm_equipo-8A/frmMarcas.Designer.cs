@@ -64,6 +64,7 @@
             this.btnCrear.TabIndex = 2;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnModificar
             // 
