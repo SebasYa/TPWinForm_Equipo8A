@@ -64,10 +64,23 @@ namespace TPWinForm_equipo_8A
             Marca seleccionado;
             try
             {
+                if(dgvMarcas.CurrentRow == null)
+                {
+                    MessageBox.Show("Selecciona una Marca.");
+                    return;
+                }
+
+                seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                if(negocio.existeMarcaEnArticulos(seleccionado.Id))
+                {
+                    MessageBox.Show("No se puede eliminar una Marca que esta asociada a uno o mas Articulos.", "ERROR POR REFERENCIA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 DialogResult resp = MessageBox.Show("¿Eliminar marca? Esta acción es permanente y no se puede deshacer.", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resp == DialogResult.Yes)
                 {
-                    seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
                     negocio.eliminar(seleccionado.Id);
                     cargar();
                 }

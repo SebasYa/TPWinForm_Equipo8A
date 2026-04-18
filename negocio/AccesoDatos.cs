@@ -72,5 +72,7 @@ namespace negocio
                 throw ex;
             }
         }
+
+
     }
 }

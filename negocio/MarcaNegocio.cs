@@ -60,6 +60,31 @@ namespace negocio
             }
         }
 
+        public bool existeMarcaEnArticulos(int idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                //datos.setearConsulta("SELECT COUNT(*) FROM ARTICULOS WHERE IdMarca = @id");
+                datos.setearConsulta("SELECT TOP 1 Id FROM ARTICULOS WHERE IdMarca = @id");
+                datos.setearParametro("@id", idMarca);
+
+                datos.ejecutarLectura();
+
+                return datos.Lector.Read();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void modificar(Marca marca)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -67,7 +92,7 @@ namespace negocio
             {
                 datos.setearConsulta("UPDATE MARCAS SET Descripcion = @descripcion WHERE Id = @id");
                 datos.setearParametro("@descripcion", marca.Descripcion);
-                datos.setearParametro("@Id", marca.Id);
+                datos.setearParametro("@id", marca.Id);
 
                 datos.ejecutarAccion();
             }
