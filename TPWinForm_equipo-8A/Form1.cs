@@ -16,5 +16,11 @@ namespace TPWinForm_equipo_8A
         {
             InitializeComponent();
         }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas ventana = new frmMarcas();
+            ventana.ShowDialog();
+        }
     }
 }

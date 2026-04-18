@@ -28,13 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMarcas.Location = new System.Drawing.Point(300, 204);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(168, 73);
+            this.btnMarcas.TabIndex = 0;
+            this.btnMarcas.Text = "MARCAS";
+            this.btnMarcas.UseVisualStyleBackColor = false;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMarcas);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnMarcas;
     }
 }
 
