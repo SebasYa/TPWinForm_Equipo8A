@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using negocio;
+using dominio;
 
 namespace TPWinForm_equipo_8A
 {
@@ -25,6 +26,11 @@ namespace TPWinForm_equipo_8A
 
         private void frmMarcas_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        public void cargar()
+        {
             try
             {
                 MarcaNegocio negocio = new MarcaNegocio();
@@ -36,11 +42,20 @@ namespace TPWinForm_equipo_8A
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void btnCrear_Click(object sender, EventArgs e)
         {
             frmAltaMarca alta = new frmAltaMarca();
             alta.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Marca seleccionado;
+            seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            frmAltaMarca modificar = new frmAltaMarca(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }

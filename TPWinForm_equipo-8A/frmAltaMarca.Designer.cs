@@ -84,6 +84,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAltaMarca";
             this.Text = "Nueva Marca";
+            this.Load += new System.EventHandler(this.frmAltaMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
