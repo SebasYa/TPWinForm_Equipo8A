@@ -25,7 +25,7 @@ namespace negocio
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
-                    lista.add(aux);
+                    lista.Add(aux);
                 }
 
                 return lista;
@@ -48,7 +48,7 @@ namespace negocio
             {
                 datos.setearParametro("@descripcion", nueva.Descripcion);
                 datos.setearConsulta("INSERT INTO MARCAS (Descripcion) VALUES (@descripcion)");
-                datos.ejecutarAccion();`
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
