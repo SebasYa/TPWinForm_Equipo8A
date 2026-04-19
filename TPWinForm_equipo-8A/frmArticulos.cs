@@ -30,6 +30,7 @@ namespace TPWinForm_equipo_8A
                 listaArticulos = negocio.listar();
                 dgvListaArticulos.DataSource = listaArticulos;
                 dgvListaArticulos.Columns["Id"].Visible = false;
+                dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -83,8 +84,9 @@ namespace TPWinForm_equipo_8A
         private void ocultarColumnas()
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
-            dgvListaArticulos.Columns["IdMarca"].Visible = false;
-            dgvListaArticulos.Columns["IdCategoria"].Visible = false;
+            //dgvListaArticulos.Columns["IdMarca"].Visible = false;
+            //dgvListaArticulos.Columns["IdCategoria"].Visible = false;
+            dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
         private void cargarImagen(string imagenUrl)

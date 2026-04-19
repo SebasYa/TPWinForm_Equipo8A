@@ -204,7 +204,7 @@
             // 
             this.lblTituloAltaArticulo.AutoSize = true;
             this.lblTituloAltaArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(294, 28);
+            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(366, 9);
             this.lblTituloAltaArticulo.MinimumSize = new System.Drawing.Size(147, 20);
             this.lblTituloAltaArticulo.Name = "lblTituloAltaArticulo";
             this.lblTituloAltaArticulo.Size = new System.Drawing.Size(147, 20);
@@ -240,7 +240,7 @@
             this.MinimumSize = new System.Drawing.Size(541, 413);
             this.Name = "frmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta de Articulo";
+            this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAltaArticulo)).EndInit();
             this.ResumeLayout(false);

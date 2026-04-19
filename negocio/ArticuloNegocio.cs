@@ -26,12 +26,12 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
 					aux.Descripcion = (string)datos.Lector["Descripcion"];
-					aux.IdMarca = new Marca(); 
-					aux.IdMarca.Id = (int)datos.Lector["IdMarca"];
-                    aux.IdMarca.Descripcion = (string)datos.Lector["Marca"];
-                    aux.IdCategoria = new Categoria();
-                    aux.IdCategoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.IdCategoria.Descripcion = (string)datos.Lector["Categoria"];
+					aux.Marca = new Marca(); 
+					aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.ImagenUrl = new Imagen();
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl.ImagenUrl = (string)datos.Lector["ImagenUrl"];
@@ -67,8 +67,8 @@ namespace negocio
                 datos.setearParametro("@codigo", nuevo.Codigo);
                 datos.setearParametro("@nombre", nuevo.Nombre);
                 datos.setearParametro("@descripcion", nuevo.Descripcion);
-                datos.setearParametro("@IdMarca", nuevo.IdMarca.Id);
-                datos.setearParametro("@IdCategoria", nuevo.IdCategoria.Id);
+                datos.setearParametro("@IdMarca", nuevo.Marca.Id);
+                datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@precio", nuevo.Precio);
 
 
