@@ -28,5 +28,11 @@ namespace TPWinForm_equipo_8A
             frmArticulos ventana = new frmArticulos();
             ventana.ShowDialog();
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventana = new frmCategorias();
+            ventana.ShowDialog();
+        }
     }
 }
