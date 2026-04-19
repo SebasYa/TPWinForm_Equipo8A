@@ -36,10 +36,13 @@ namespace TPWinForm_equipo_8A
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            if(dgvListaArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Selecciona un Articulo.");
+                return;
+            }
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
            
-
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
             cargarArticulos();

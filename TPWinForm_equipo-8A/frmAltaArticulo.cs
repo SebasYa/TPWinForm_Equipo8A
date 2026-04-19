@@ -31,28 +31,31 @@ namespace TPWinForm_equipo_8A
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
-            //ElementoNegocio elementoNegocio = new ElementoNegocio();
+            MarcaNegocio marcaN = new MarcaNegocio();
+            CategoriaNegocio categoriaN = new CategoriaNegocio();
             try
             {
-               /* cboxTipo.DataSource = elementoNegocio.listar();
-                cboxTipo.ValueMember = "Id";
-                cboxTipo.DisplayMember = "Descripcion";
+                cbxMarcaArticulo.DataSource = marcaN.listar();
+                cbxMarcaArticulo.ValueMember = "Descripcion";
+                cbxMarcaArticulo.DisplayMember = "Marca";
 
-                cboxDebilidad.DataSource = elementoNegocio.listar();
-                cboxDebilidad.ValueMember = "Id";
-                cboxDebilidad.DisplayMember = "Descripcion";
+                cbxCategoriaArticulo.DataSource = categoriaN.listar();
+                cbxCategoriaArticulo.ValueMember = "Descripcion";
+                cbxCategoriaArticulo.DisplayMember = "Categoria";
 
-                if (pokemon != null)
+                if(articulo != null)
                 {
-                    txtNumero.Text = pokemon.Numero.ToString();
-                    txtNombre.Text = pokemon.Nombre;
-                    txtDescripcion.Text = pokemon.Descripcion;
-                    txtImagen.Text = pokemon.Imagen;
-                    cargarImagen(pokemon.Imagen);
-                    cboxTipo.SelectedValue = pokemon.Tipo.Id;
-                    cboxDebilidad.SelectedValue = pokemon.Debilidad.Id;
+                    txtCodigoArticulo.Text = articulo.Codigo;
+                    txtNombreArticulo.Text = articulo.Nombre;
+                    txtDescripcionArticulo.Text = articulo.Descripcion;
+                    txtImagenArticulo.Text = articulo.ImagenUrl.ImagenUrl;
+                    txtPrecioArticulo.Text = articulo.Precio.ToString();
 
-                }*/
+                    cbxMarcaArticulo.SelectedValue = articulo.Marca.Descripcion;
+                    cbxCategoriaArticulo.SelectedValue = articulo.Categoria.Descripcion;
+
+                    pbxAltaArticulo.Load(txtImagenArticulo.Text);
+                }
             }
             catch (Exception ex)
             {
