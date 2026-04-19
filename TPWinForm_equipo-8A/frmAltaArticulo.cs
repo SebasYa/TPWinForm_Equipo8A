@@ -16,5 +16,10 @@ namespace TPWinForm_equipo_8A
         {
             InitializeComponent();
         }
+
+        private void frmAltaArticulo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
