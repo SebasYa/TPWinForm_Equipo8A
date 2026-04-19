@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 using negocio;
 
 namespace TPWinForm_equipo_8A
 {
     public partial class frmArticulos : Form
     {
+        public List<Articulo> listaArticulos;
         public frmArticulos()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace TPWinForm_equipo_8A
             try
             {
                 ArticuloNegocio negocio = new ArticuloNegocio();
-                dgvListaArticulos.DataSource = negocio.lista();
+                listaArticulos = negocio.lista();
+                dgvListaArticulos.DataSource = listaArticulos;
 
             }
             catch (Exception ex)
