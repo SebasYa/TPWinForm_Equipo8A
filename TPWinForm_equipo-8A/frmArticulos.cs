@@ -10,14 +10,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
+
 
 namespace TPWinForm_equipo_8A
 {
     public partial class frmArticulos : Form
     {
-        private List<Articulo> listaArticulo;
+        private List<Articulo> listaArticulos;
         public frmArticulos()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace TPWinForm_equipo_8A
             try
             {
                 ArticuloNegocio negocio = new ArticuloNegocio();
-                listaArticulos = negocio.lista();
+                listaArticulos = negocio.listar();
                 dgvListaArticulos.DataSource = listaArticulos;
                 dgvListaArticulos.Columns["Id"].Visible = false;
             }
@@ -60,18 +59,18 @@ namespace TPWinForm_equipo_8A
 
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
-            cargar();
+            cargarArticulos();
         }
 
-        private void cargar()
+        private void cargarArticulos()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                listaArticulo = negocio.listar();
-                dgvListaArticulos.DataSource = listaArticulo;
+                listaArticulos = negocio.listar();
+                dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-                cargarImagen(listaArticulo[0].ImagenUrl.ImagenUrl);
+                cargarImagen(listaArticulos[0].ImagenUrl.ImagenUrl);
                 
             }
             catch (Exception ex)
