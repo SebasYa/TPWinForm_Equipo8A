@@ -23,19 +23,27 @@ namespace negocio
 				{
 					Articulo aux = new Articulo();
 					aux.Id = (int)datos.Lector["Id"];
-                    aux.Codigo = (string)datos.Lector["Codigo"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-					aux.Descripcion = (string)datos.Lector["Descripcion"];
-					aux.Marca = new Marca(); 
-					aux.Marca.Id = (int)datos.Lector["IdMarca"];
-                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    if (!(datos.Lector["Codigo"] is DBNull))
+                        aux.Codigo = (string)datos.Lector["Codigo"];
+                    if (!(datos.Lector["Nombre"] is DBNull))
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                    if (!(datos.Lector["Descripcion"] is DBNull))
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+					aux.Marca = new Marca();
+                    if (!(datos.Lector["IdMarca"] is DBNull))
+                        aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    if (!(datos.Lector["Marca"] is DBNull))
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
-                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    if (!(datos.Lector["IdCategoria"] is DBNull))
+                        aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    if (!(datos.Lector["Categoria"] is DBNull))
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.ImagenUrl = new Imagen();
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    if (!(datos.Lector["Precio"] is DBNull))
+                        aux.Precio = (decimal)datos.Lector["Precio"];
 
 
 					lista.Add(aux);
@@ -94,19 +102,19 @@ namespace negocio
             }
         }
 
-       /* public void modificar(Articulo articulo)
+        public void modificar(Articulo articulo)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update POKEMONS set Numero = @numero, Nombre = @nombre, Descripcion = @desc, UrlImagen = @img, IdTipo = @idTipo, IdDebilidad = @idDebilidad where Id = @id");
-                datos.setearParametro("@numero", articulo.Numero);
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio Where Id = @id");
+                datos.setearParametro("@codigo", articulo.Codigo);
                 datos.setearParametro("@nombre", articulo.Nombre);
-                datos.setearParametro("@desc", articulo.Descripcion);
-                datos.setearParametro("@img", articulo.Imagen);
-                datos.setearParametro("@idTipo", articulo.Tipo.Id);
-                datos.setearParametro("@idDebilidad", articulo.Debilidad.Id);
-                datos.setearParametro("@id", articulo.Id);
+                datos.setearParametro("@descripcion", articulo.Descripcion);
+                //datos.setearParametro("@img", articulo.Imagen);
+                datos.setearParametro("@idMarca", articulo.Marca.Id);
+                datos.setearParametro("@@idCategoria", articulo.Categoria.Id);
+                datos.setearParametro("@@precio", articulo.Precio);
 
                 datos.ejecutarAccion();
             }
@@ -119,6 +127,6 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-        }*/
+        }
     }
 }

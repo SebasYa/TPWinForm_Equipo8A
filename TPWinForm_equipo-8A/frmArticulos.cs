@@ -22,24 +22,6 @@ namespace TPWinForm_equipo_8A
             InitializeComponent();
         }
 
-        public void cargar()
-        {
-            try
-            {
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                listaArticulos = negocio.listar();
-                dgvListaArticulos.DataSource = listaArticulos;
-                dgvListaArticulos.Columns["Id"].Visible = false;
-                dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
-
         private void lblMarca_Click(object sender, EventArgs e)
         {
 
@@ -84,8 +66,6 @@ namespace TPWinForm_equipo_8A
         private void ocultarColumnas()
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
-            //dgvListaArticulos.Columns["IdMarca"].Visible = false;
-            //dgvListaArticulos.Columns["IdCategoria"].Visible = false;
             dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
@@ -113,7 +93,7 @@ namespace TPWinForm_equipo_8A
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
-            cargar();
+            cargarArticulos();
             pnlFiltroAvanzado.Visible = false;
             btnFiltroAvanzado.Text = "+ Filtro Avanzado";
         }

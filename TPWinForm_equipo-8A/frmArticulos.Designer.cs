@@ -55,6 +55,7 @@
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArticulos.Location = new System.Drawing.Point(46, 70);
+            this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(581, 234);
