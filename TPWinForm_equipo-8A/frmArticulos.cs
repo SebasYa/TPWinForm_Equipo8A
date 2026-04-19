@@ -27,7 +27,7 @@ namespace TPWinForm_equipo_8A
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 listaArticulos = negocio.lista();
                 dgvListaArticulos.DataSource = listaArticulos;
-
+                dgvListaArticulos.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {
