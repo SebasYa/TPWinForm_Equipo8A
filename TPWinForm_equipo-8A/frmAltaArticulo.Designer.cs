@@ -172,6 +172,7 @@
             this.btnAltaArticulo.TabIndex = 7;
             this.btnAltaArticulo.Text = "Aceptar";
             this.btnAltaArticulo.UseVisualStyleBackColor = true;
+            this.btnAltaArticulo.Click += new System.EventHandler(this.btnAltaArticulo_Click);
             // 
             // btnCancelarAltaArticulo
             // 
@@ -181,6 +182,7 @@
             this.btnCancelarAltaArticulo.TabIndex = 8;
             this.btnCancelarAltaArticulo.Text = "Cancelar";
             this.btnCancelarAltaArticulo.UseVisualStyleBackColor = true;
+            this.btnCancelarAltaArticulo.Click += new System.EventHandler(this.btnCancelarAltaArticulo_Click);
             // 
             // pbxAltaArticulo
             // 

@@ -108,13 +108,14 @@ namespace negocio
             try
             {
                 datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio Where Id = @id");
+                datos.setearParametro("@id", articulo.Id);
                 datos.setearParametro("@codigo", articulo.Codigo);
                 datos.setearParametro("@nombre", articulo.Nombre);
                 datos.setearParametro("@descripcion", articulo.Descripcion);
                 //datos.setearParametro("@img", articulo.Imagen);
                 datos.setearParametro("@idMarca", articulo.Marca.Id);
-                datos.setearParametro("@@idCategoria", articulo.Categoria.Id);
-                datos.setearParametro("@@precio", articulo.Precio);
+                datos.setearParametro("@idCategoria", articulo.Categoria.Id);
+                datos.setearParametro("@precio", articulo.Precio);
 
                 datos.ejecutarAccion();
             }

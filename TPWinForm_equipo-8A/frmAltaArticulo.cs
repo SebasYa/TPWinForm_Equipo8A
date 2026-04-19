@@ -1,14 +1,15 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
 
 namespace TPWinForm_equipo_8A
 {
@@ -56,6 +57,57 @@ namespace TPWinForm_equipo_8A
 
                     pbxAltaArticulo.Load(txtImagenArticulo.Text);
                 }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnCancelarAltaArticulo_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAltaArticulo_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                if (articulo == null) articulo = new Articulo();
+                if (articulo.ImagenUrl == null) articulo.ImagenUrl = new Imagen();
+
+                if (string.IsNullOrWhiteSpace(txtCodigoArticulo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un Codigo.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtNombreArticulo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un Nombre.");
+                    return;
+                }
+                articulo.Codigo = txtCodigoArticulo.Text;
+                articulo.Nombre = txtNombreArticulo.Text;
+                articulo.Descripcion = txtDescripcionArticulo.Text;
+                articulo.ImagenUrl.ImagenUrl = txtImagenArticulo.Text;
+                articulo.Precio = decimal.Parse(txtPrecioArticulo.Text);
+
+                articulo.Marca = (Marca)cbxMarcaArticulo.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoriaArticulo.SelectedItem;
+
+                if (articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Modificado Exitosamente!");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado Exitosamente!!!");
+                }
+                this.Close();
             }
             catch (Exception ex)
             {
