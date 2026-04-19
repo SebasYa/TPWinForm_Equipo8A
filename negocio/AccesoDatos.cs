@@ -19,9 +19,21 @@ namespace negocio
         }
 
        public AccesoDatos()
-        {
-            conexion = new SqlConnection("server=(localdb)\\MSSQLLocalDB; database=CATALOGO_P3_DB; integrated security=true");
-            comando = new SqlCommand();
+        {           
+            try
+            {
+                // conexion sebas
+                //conexion = new SqlConnection("server=(localdb)\\MSSQLLocalDB; database=CATALOGO_P3_DB; integrated security=true");
+                //conexion sqlExpress
+                conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+                comando = new SqlCommand();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public void setearConsulta(string consulta)

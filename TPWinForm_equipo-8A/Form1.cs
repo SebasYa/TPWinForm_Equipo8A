@@ -22,5 +22,11 @@ namespace TPWinForm_equipo_8A
             frmMarcas ventana = new frmMarcas();
             ventana.ShowDialog();
         }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            frmArticulos ventana = new frmArticulos();
+            ventana.ShowDialog();
+        }
     }
 }

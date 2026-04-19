@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnArticulos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMarcas
             // 
             this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMarcas.Location = new System.Drawing.Point(300, 204);
+            this.btnMarcas.Location = new System.Drawing.Point(100, 204);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Size = new System.Drawing.Size(168, 73);
             this.btnMarcas.TabIndex = 0;
@@ -42,11 +43,23 @@
             this.btnMarcas.UseVisualStyleBackColor = false;
             this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
+            // btnArticulos
+            // 
+            this.btnArticulos.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnArticulos.Location = new System.Drawing.Point(319, 204);
+            this.btnArticulos.Name = "btnArticulos";
+            this.btnArticulos.Size = new System.Drawing.Size(168, 73);
+            this.btnArticulos.TabIndex = 1;
+            this.btnArticulos.Text = "ARTICULOS";
+            this.btnArticulos.UseVisualStyleBackColor = false;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(775, 435);
+            this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnMarcas);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -58,6 +71,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnMarcas;
+        private System.Windows.Forms.Button btnArticulos;
     }
 }
 
