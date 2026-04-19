@@ -10,7 +10,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using dominio;
+using negocio;
 
 namespace TPWinForm_equipo_8A
 {
@@ -20,6 +21,23 @@ namespace TPWinForm_equipo_8A
         public frmArticulos()
         {
             InitializeComponent();
+        }
+
+        public void cargar()
+        {
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                listaArticulos = negocio.lista();
+                dgvListaArticulos.DataSource = listaArticulos;
+                dgvListaArticulos.Columns["Id"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void lblMarca_Click(object sender, EventArgs e)
