@@ -85,6 +85,20 @@ namespace negocio
             }
         }
 
+        internal int ejecutarScalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                return (int)comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }
