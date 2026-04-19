@@ -7,7 +7,7 @@ using dominio;
 
 namespace negocio
 {
-    internal class ArticuloNegocio
+    public class ArticuloNegocio
     {
         public List<Articulo> lista()
         {
@@ -26,9 +26,9 @@ namespace negocio
 					aux.Nombre = (string)datos.Lector["Nombre"];
 					aux.Descripcion = (string)datos.Lector["Descripcion"];
 					aux.Precio = (decimal)datos.Lector["Precio"];
-					aux.IdMarca = (Marca)datos.Lector["IdMarca"];
-					aux.IdCategoria = (Categoria)datos.Lector["IdCategoria"];
-					aux.Codigo = (string)datos.Lector["IdCategoria"];
+					//aux.IdMarca = (Marca)datos.Lector["IdMarca"];
+					//aux.IdCategoria = (Categoria)datos.Lector["IdCategoria"];
+					aux.Codigo = (string)datos.Lector["Codigo"];
 
 					lista.Add(aux);
 
@@ -46,5 +46,6 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+		
     }
 }

@@ -35,7 +35,7 @@
             // btnMarcas
             // 
             this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMarcas.Location = new System.Drawing.Point(100, 204);
+            this.btnMarcas.Location = new System.Drawing.Point(60, 170);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Size = new System.Drawing.Size(168, 73);
             this.btnMarcas.TabIndex = 0;
@@ -46,7 +46,7 @@
             // btnArticulos
             // 
             this.btnArticulos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnArticulos.Location = new System.Drawing.Point(319, 204);
+            this.btnArticulos.Location = new System.Drawing.Point(287, 50);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Size = new System.Drawing.Size(168, 73);
             this.btnArticulos.TabIndex = 1;

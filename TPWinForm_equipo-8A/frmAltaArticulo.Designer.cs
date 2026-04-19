@@ -37,6 +37,7 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "frmAltaArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmAltaArticulo";
             this.ResumeLayout(false);
 

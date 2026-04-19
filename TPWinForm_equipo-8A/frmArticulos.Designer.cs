@@ -56,6 +56,7 @@
             this.dgvListaArticulos.Name = "dgvListaArticulos";
             this.dgvListaArticulos.Size = new System.Drawing.Size(581, 234);
             this.dgvListaArticulos.TabIndex = 0;
+            this.dgvListaArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaArticulos_CellContentClick);
             // 
             // pbxImagen
             // 
@@ -214,6 +215,7 @@
             this.Name = "frmArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArticulos";
+            this.Load += new System.EventHandler(this.frmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.pnlFiltroAvanzado.ResumeLayout(false);
