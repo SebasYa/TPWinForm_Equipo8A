@@ -40,11 +40,11 @@
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMarcas.Location = new System.Drawing.Point(141, 67);
+            this.dgvMarcas.Location = new System.Drawing.Point(103, 50);
             this.dgvMarcas.MultiSelect = false;
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(279, 177);
+            this.dgvMarcas.Size = new System.Drawing.Size(356, 243);
             this.dgvMarcas.TabIndex = 0;
             this.dgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -73,9 +73,9 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnModificar.Location = new System.Drawing.Point(51, 316);
+            this.btnModificar.Location = new System.Drawing.Point(481, 99);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 30);
+            this.btnModificar.Size = new System.Drawing.Size(97, 30);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Maroon;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminar.Location = new System.Drawing.Point(403, 316);
+            this.btnEliminar.Location = new System.Drawing.Point(12, 318);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(109, 30);
             this.btnEliminar.TabIndex = 4;
