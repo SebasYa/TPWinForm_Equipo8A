@@ -38,26 +38,62 @@ namespace TPWinForm_equipo_8A
 
         private void lklblSY_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "https://github.com/SebasYa";
-            psi.UseShellExecute = true;
-            Process.Start(psi);
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "https://github.com/SebasYa";
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void lklblMB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "https://github.com/maxibian";
-            psi.UseShellExecute = true;
-            Process.Start(psi);
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "https://github.com/maxibian";
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void lklblMRB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "https://github.com/marceloreart";
-            psi.UseShellExecute = true;
-            Process.Start(psi);
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "https://github.com/marceloreart";
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void lklblRepo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "https://github.com/SebasYa/TPWinForm_Equipo8A";
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

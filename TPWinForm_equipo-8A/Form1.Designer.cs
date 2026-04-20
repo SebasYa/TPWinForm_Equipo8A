@@ -35,12 +35,13 @@
             this.lklblSY = new System.Windows.Forms.LinkLabel();
             this.lklblMB = new System.Windows.Forms.LinkLabel();
             this.lklblMRB = new System.Windows.Forms.LinkLabel();
+            this.lklblRepo = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnMarcas
             // 
             this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMarcas.Location = new System.Drawing.Point(27, 170);
+            this.btnMarcas.Location = new System.Drawing.Point(102, 159);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Size = new System.Drawing.Size(168, 73);
             this.btnMarcas.TabIndex = 0;
@@ -51,7 +52,7 @@
             // btnArticulos
             // 
             this.btnArticulos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnArticulos.Location = new System.Drawing.Point(316, 27);
+            this.btnArticulos.Location = new System.Drawing.Point(359, 27);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Size = new System.Drawing.Size(168, 73);
             this.btnArticulos.TabIndex = 1;
@@ -62,7 +63,7 @@
             // btnCategorias
             // 
             this.btnCategorias.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCategorias.Location = new System.Drawing.Point(584, 170);
+            this.btnCategorias.Location = new System.Drawing.Point(598, 159);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(168, 73);
             this.btnCategorias.TabIndex = 2;
@@ -73,7 +74,7 @@
             // btnImagenes
             // 
             this.btnImagenes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnImagenes.Location = new System.Drawing.Point(316, 170);
+            this.btnImagenes.Location = new System.Drawing.Point(359, 159);
             this.btnImagenes.Name = "btnImagenes";
             this.btnImagenes.Size = new System.Drawing.Size(168, 73);
             this.btnImagenes.TabIndex = 3;
@@ -116,12 +117,25 @@
             this.lklblMRB.Text = "Marecelo Rearte Becerra";
             this.lklblMRB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblMRB_LinkClicked);
             // 
+            // lklblRepo
+            // 
+            this.lklblRepo.AutoSize = true;
+            this.lklblRepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblRepo.Location = new System.Drawing.Point(23, 331);
+            this.lklblRepo.Name = "lklblRepo";
+            this.lklblRepo.Size = new System.Drawing.Size(90, 20);
+            this.lklblRepo.TabIndex = 10;
+            this.lklblRepo.TabStop = true;
+            this.lklblRepo.Text = "Repositorio";
+            this.lklblRepo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblRepo_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(867, 360);
+            this.Controls.Add(this.lklblRepo);
             this.Controls.Add(this.lklblMRB);
             this.Controls.Add(this.lklblMB);
             this.Controls.Add(this.lklblSY);
@@ -146,6 +160,7 @@
         private System.Windows.Forms.LinkLabel lklblSY;
         private System.Windows.Forms.LinkLabel lklblMB;
         private System.Windows.Forms.LinkLabel lklblMRB;
+        private System.Windows.Forms.LinkLabel lklblRepo;
     }
 }
 
