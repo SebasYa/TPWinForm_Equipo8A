@@ -31,12 +31,16 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
+            this.btnImagenes = new System.Windows.Forms.Button();
+            this.lklblSY = new System.Windows.Forms.LinkLabel();
+            this.lklblMB = new System.Windows.Forms.LinkLabel();
+            this.lklblMRB = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnMarcas
             // 
             this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMarcas.Location = new System.Drawing.Point(60, 170);
+            this.btnMarcas.Location = new System.Drawing.Point(27, 170);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Size = new System.Drawing.Size(168, 73);
             this.btnMarcas.TabIndex = 0;
@@ -47,7 +51,7 @@
             // btnArticulos
             // 
             this.btnArticulos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnArticulos.Location = new System.Drawing.Point(287, 50);
+            this.btnArticulos.Location = new System.Drawing.Point(316, 27);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Size = new System.Drawing.Size(168, 73);
             this.btnArticulos.TabIndex = 1;
@@ -58,7 +62,7 @@
             // btnCategorias
             // 
             this.btnCategorias.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCategorias.Location = new System.Drawing.Point(512, 170);
+            this.btnCategorias.Location = new System.Drawing.Point(584, 170);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(168, 73);
             this.btnCategorias.TabIndex = 2;
@@ -66,12 +70,62 @@
             this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
+            // btnImagenes
+            // 
+            this.btnImagenes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnImagenes.Location = new System.Drawing.Point(316, 170);
+            this.btnImagenes.Name = "btnImagenes";
+            this.btnImagenes.Size = new System.Drawing.Size(168, 73);
+            this.btnImagenes.TabIndex = 3;
+            this.btnImagenes.Text = "IMAGENES";
+            this.btnImagenes.UseVisualStyleBackColor = false;
+            // 
+            // lklblSY
+            // 
+            this.lklblSY.AutoSize = true;
+            this.lklblSY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblSY.Location = new System.Drawing.Point(729, 265);
+            this.lklblSY.Name = "lklblSY";
+            this.lklblSY.Size = new System.Drawing.Size(126, 20);
+            this.lklblSY.TabIndex = 7;
+            this.lklblSY.TabStop = true;
+            this.lklblSY.Text = "Sebastian Yanni";
+            this.lklblSY.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblSY_LinkClicked);
+            // 
+            // lklblMB
+            // 
+            this.lklblMB.AutoSize = true;
+            this.lklblMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblMB.Location = new System.Drawing.Point(709, 300);
+            this.lklblMB.Name = "lklblMB";
+            this.lklblMB.Size = new System.Drawing.Size(146, 20);
+            this.lklblMB.TabIndex = 8;
+            this.lklblMB.TabStop = true;
+            this.lklblMB.Text = "Maximiliano Bianchi";
+            this.lklblMB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblMB_LinkClicked);
+            // 
+            // lklblMRB
+            // 
+            this.lklblMRB.AutoSize = true;
+            this.lklblMRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblMRB.Location = new System.Drawing.Point(668, 331);
+            this.lklblMRB.Name = "lklblMRB";
+            this.lklblMRB.Size = new System.Drawing.Size(187, 20);
+            this.lklblMRB.TabIndex = 9;
+            this.lklblMRB.TabStop = true;
+            this.lklblMRB.Text = "Marecelo Rearte Becerra";
+            this.lklblMRB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblMRB_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(775, 435);
+            this.ClientSize = new System.Drawing.Size(867, 360);
+            this.Controls.Add(this.lklblMRB);
+            this.Controls.Add(this.lklblMB);
+            this.Controls.Add(this.lklblSY);
+            this.Controls.Add(this.btnImagenes);
             this.Controls.Add(this.btnCategorias);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnMarcas);
@@ -79,6 +133,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,6 +142,10 @@
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Button btnImagenes;
+        private System.Windows.Forms.LinkLabel lklblSY;
+        private System.Windows.Forms.LinkLabel lklblMB;
+        private System.Windows.Forms.LinkLabel lklblMRB;
     }
 }
 

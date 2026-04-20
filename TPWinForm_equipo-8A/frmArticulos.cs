@@ -132,8 +132,8 @@ namespace TPWinForm_equipo_8A
             }
             catch (Exception)
             {
-                //lblErrorImagen.Text = "Error al cargar la imagen";
-                lblErrorImagen.Text = "";
+                lblErrorImagen.Text = "Articulo sin Imagen";
+                //lblErrorImagen.Text = "";
                 pbxImagen.Load(placeholder);
             }
         }

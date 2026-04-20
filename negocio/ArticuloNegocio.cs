@@ -25,27 +25,42 @@ namespace negocio
 					aux.Id = (int)datos.Lector["Id"];
 
                     if (!(datos.Lector["Codigo"] is DBNull))
+                    {
                         aux.Codigo = (string)datos.Lector["Codigo"];
+                    }
                     if (!(datos.Lector["Nombre"] is DBNull))
+                    {
                         aux.Nombre = (string)datos.Lector["Nombre"];
+                    }
                     if (!(datos.Lector["Descripcion"] is DBNull))
+                    {
                         aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    }
+                    if (!(datos.Lector["Precio"] is DBNull))
+                    {
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+                    }
+                    // MARCA
 					aux.Marca = new Marca();
                     if (!(datos.Lector["IdMarca"] is DBNull))
+                    {
                         aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    }
                     if (!(datos.Lector["Marca"] is DBNull))
+                    {
                         aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    // CATEGORIA
                     aux.Categoria = new Categoria();
                     if (!(datos.Lector["IdCategoria"] is DBNull))
+                    {
                         aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    }
                     if (!(datos.Lector["Categoria"] is DBNull))
+                    {
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    //aux.ImagenUrl = new Imagen();
-                    //if (!(datos.Lector["ImagenUrl"] is DBNull))
-                    //    aux.ImagenUrl.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    if (!(datos.Lector["Precio"] is DBNull))
-                        aux.Precio = (decimal)datos.Lector["Precio"];
-
+                    }
+                    // ---- 
 
 					lista.Add(aux);
 
@@ -80,17 +95,6 @@ namespace negocio
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@precio", nuevo.Precio);
 
-
-                //int idArticulo = Convert.ToInt32(datos.ejecutarScalar());
-                //int idArticulo = (int)datos.ejecutarScalar();
-
-                //datos.setearConsulta(@"INSERT INTO IMAGENES (ImagenUrl, IdArticulo)
-                //                       VALUES (@imagen, @IdArticulo)");
-
-                //datos.setearParametro("@imagen", nuevo.ImagenUrl);
-                //datos.setearParametro("@IdArticulo", idArticulo);
-
-                //datos.ejecutarAccion();
                 return Convert.ToInt32(datos.ejecutarScalar());
             }
             catch (Exception ex)
@@ -114,7 +118,6 @@ namespace negocio
                 datos.setearParametro("@codigo", articulo.Codigo);
                 datos.setearParametro("@nombre", articulo.Nombre);
                 datos.setearParametro("@descripcion", articulo.Descripcion);
-                //datos.setearParametro("@img", articulo.Imagen);
                 datos.setearParametro("@idMarca", articulo.Marca.Id);
                 datos.setearParametro("@idCategoria", articulo.Categoria.Id);
                 datos.setearParametro("@precio", articulo.Precio);

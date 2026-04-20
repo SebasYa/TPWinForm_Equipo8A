@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,30 @@ namespace TPWinForm_equipo_8A
         {
             frmCategorias ventana = new frmCategorias();
             ventana.ShowDialog();
+        }
+
+        private void lklblSY_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "https://github.com/SebasYa";
+            psi.UseShellExecute = true;
+            Process.Start(psi);
+        }
+
+        private void lklblMB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "https://github.com/maxibian";
+            psi.UseShellExecute = true;
+            Process.Start(psi);
+        }
+
+        private void lklblMRB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "https://github.com/marceloreart";
+            psi.UseShellExecute = true;
+            Process.Start(psi);
         }
     }
 }
