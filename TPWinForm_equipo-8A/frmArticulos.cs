@@ -23,6 +23,7 @@ namespace TPWinForm_equipo_8A
         private int indiceImagenActual = 0;
         private int imagenActual = 0;
         private int cantidadDeImagenes = 0;
+
         public frmArticulos()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace TPWinForm_equipo_8A
             alta.ShowDialog();
             cargarDatos();
         }
+        
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -54,6 +56,39 @@ namespace TPWinForm_equipo_8A
             cargarDatos();
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                if (dgvListaArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("Selecciona una Marca.");
+                    return;
+                }
+
+                seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+
+                if (negocio.existeArticulosEnImagenes(seleccionado.Id))
+                {
+                    MessageBox.Show("No se puede eliminar un Articulo que esta asociada a Imagenes.", "ERROR POR REFERENCIA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                DialogResult resp = MessageBox.Show("¿Eliminar Articulo? Esta acción es permanente y no se puede deshacer.", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resp == DialogResult.Yes)
+                {
+                    negocio.eliminar(seleccionado.Id);
+                    cargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void ocultarColumnas()
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
@@ -70,7 +105,6 @@ namespace TPWinForm_equipo_8A
 
                 dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-                //imagenesArticuloActual = new List<Imagen>();
                 indiceImagenActual = 0;
 
                 if (listaArticulos.Count > 0)
@@ -78,10 +112,6 @@ namespace TPWinForm_equipo_8A
                     Articulo seleccionado = listaArticulos[0];
                     cargarImagenesDelArticulo(seleccionado.Id);
                 }
-                //else
-                //{
-                //    cargarImagen("");
-                //}
             }
             catch (Exception ex)
             {
@@ -196,6 +226,7 @@ namespace TPWinForm_equipo_8A
                 mostrarImagenActual();
             }
         }
+
     }
 }
 

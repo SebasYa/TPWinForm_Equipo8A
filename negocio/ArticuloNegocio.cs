@@ -95,7 +95,7 @@ namespace negocio
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@precio", nuevo.Precio);
 
-                return Convert.ToInt32(datos.ejecutarScalar());
+                return datos.ejecutarScalar();
             }
             catch (Exception ex)
             {
@@ -133,6 +133,52 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+        public bool existeArticulosEnImagenes(int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                //datos.setearConsulta("SELECT COUNT(*) FROM ARTICULOS WHERE IdMarca = @id");
+                datos.setearConsulta("SELECT TOP 1 Id FROM IMAGENES WHERE IdArticulo = @id");
+                datos.setearParametro("@id", idArticulo);
+
+                datos.ejecutarLectura();
+
+                return datos.Lector.Read();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
     }
 }

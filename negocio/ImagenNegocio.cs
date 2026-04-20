@@ -25,11 +25,7 @@ namespace negocio
                     Imagen aux = new Imagen();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.IdArticulo = (int)datos.Lector["IdArticulo"];
-
-                    if ( !(datos.Lector["ImagenUrl"] is DBNull) )
-                    {
-                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    }
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }

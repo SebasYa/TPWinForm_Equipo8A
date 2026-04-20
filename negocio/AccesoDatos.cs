@@ -91,7 +91,7 @@ namespace negocio
             try
             {
                 conexion.Open();
-                return (int)comando.ExecuteScalar();
+                return Convert.ToInt32(comando.ExecuteScalar());
             }
             catch (Exception ex)
             {

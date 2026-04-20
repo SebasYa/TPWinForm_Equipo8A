@@ -34,8 +34,6 @@
             this.lblCodigoArticulo = new System.Windows.Forms.Label();
             this.txtDescripcionArticulo = new System.Windows.Forms.TextBox();
             this.lblDescripcionArticulo = new System.Windows.Forms.Label();
-            this.txtImagenArticulo = new System.Windows.Forms.TextBox();
-            this.lblImagenArticulo = new System.Windows.Forms.Label();
             this.txtPrecioArticulo = new System.Windows.Forms.TextBox();
             this.lblPrecioArticulo = new System.Windows.Forms.Label();
             this.lblMarcaArticulo = new System.Windows.Forms.Label();
@@ -45,7 +43,6 @@
             this.btnAltaArticulo = new System.Windows.Forms.Button();
             this.btnCancelarAltaArticulo = new System.Windows.Forms.Button();
             this.pbxAltaArticulo = new System.Windows.Forms.PictureBox();
-            this.btnImagenArticulo = new System.Windows.Forms.Button();
             this.lblTituloAltaArticulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAltaArticulo)).BeginInit();
             this.SuspendLayout();
@@ -98,25 +95,9 @@
             this.lblDescripcionArticulo.TabIndex = 4;
             this.lblDescripcionArticulo.Text = "Descripción";
             // 
-            // txtImagenArticulo
-            // 
-            this.txtImagenArticulo.Location = new System.Drawing.Point(111, 256);
-            this.txtImagenArticulo.Name = "txtImagenArticulo";
-            this.txtImagenArticulo.Size = new System.Drawing.Size(121, 20);
-            this.txtImagenArticulo.TabIndex = 5;
-            // 
-            // lblImagenArticulo
-            // 
-            this.lblImagenArticulo.AutoSize = true;
-            this.lblImagenArticulo.Location = new System.Drawing.Point(36, 260);
-            this.lblImagenArticulo.Name = "lblImagenArticulo";
-            this.lblImagenArticulo.Size = new System.Drawing.Size(42, 13);
-            this.lblImagenArticulo.TabIndex = 6;
-            this.lblImagenArticulo.Text = "Imagen";
-            // 
             // txtPrecioArticulo
             // 
-            this.txtPrecioArticulo.Location = new System.Drawing.Point(111, 291);
+            this.txtPrecioArticulo.Location = new System.Drawing.Point(111, 262);
             this.txtPrecioArticulo.Name = "txtPrecioArticulo";
             this.txtPrecioArticulo.Size = new System.Drawing.Size(121, 20);
             this.txtPrecioArticulo.TabIndex = 6;
@@ -124,7 +105,7 @@
             // lblPrecioArticulo
             // 
             this.lblPrecioArticulo.AutoSize = true;
-            this.lblPrecioArticulo.Location = new System.Drawing.Point(36, 295);
+            this.lblPrecioArticulo.Location = new System.Drawing.Point(36, 265);
             this.lblPrecioArticulo.Name = "lblPrecioArticulo";
             this.lblPrecioArticulo.Size = new System.Drawing.Size(37, 13);
             this.lblPrecioArticulo.TabIndex = 8;
@@ -150,7 +131,7 @@
             // cbxCategoriaArticulo
             // 
             this.cbxCategoriaArticulo.FormattingEnabled = true;
-            this.cbxCategoriaArticulo.Location = new System.Drawing.Point(111, 219);
+            this.cbxCategoriaArticulo.Location = new System.Drawing.Point(111, 220);
             this.cbxCategoriaArticulo.Name = "cbxCategoriaArticulo";
             this.cbxCategoriaArticulo.Size = new System.Drawing.Size(121, 21);
             this.cbxCategoriaArticulo.TabIndex = 4;
@@ -192,17 +173,6 @@
             this.pbxAltaArticulo.TabIndex = 16;
             this.pbxAltaArticulo.TabStop = false;
             // 
-            // btnImagenArticulo
-            // 
-            this.btnImagenArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImagenArticulo.Location = new System.Drawing.Point(238, 255);
-            this.btnImagenArticulo.Name = "btnImagenArticulo";
-            this.btnImagenArticulo.Size = new System.Drawing.Size(38, 23);
-            this.btnImagenArticulo.TabIndex = 17;
-            this.btnImagenArticulo.Text = "+";
-            this.btnImagenArticulo.UseVisualStyleBackColor = true;
-            this.btnImagenArticulo.Click += new System.EventHandler(this.btnImagenArticulo_Click);
-            // 
             // lblTituloAltaArticulo
             // 
             this.lblTituloAltaArticulo.AutoSize = true;
@@ -221,7 +191,6 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(525, 374);
             this.Controls.Add(this.lblTituloAltaArticulo);
-            this.Controls.Add(this.btnImagenArticulo);
             this.Controls.Add(this.pbxAltaArticulo);
             this.Controls.Add(this.btnCancelarAltaArticulo);
             this.Controls.Add(this.btnAltaArticulo);
@@ -231,8 +200,6 @@
             this.Controls.Add(this.lblMarcaArticulo);
             this.Controls.Add(this.txtPrecioArticulo);
             this.Controls.Add(this.lblPrecioArticulo);
-            this.Controls.Add(this.txtImagenArticulo);
-            this.Controls.Add(this.lblImagenArticulo);
             this.Controls.Add(this.txtDescripcionArticulo);
             this.Controls.Add(this.lblDescripcionArticulo);
             this.Controls.Add(this.txtCodigoArticulo);
@@ -259,8 +226,6 @@
         private System.Windows.Forms.Label lblCodigoArticulo;
         private System.Windows.Forms.TextBox txtDescripcionArticulo;
         private System.Windows.Forms.Label lblDescripcionArticulo;
-        private System.Windows.Forms.TextBox txtImagenArticulo;
-        private System.Windows.Forms.Label lblImagenArticulo;
         private System.Windows.Forms.TextBox txtPrecioArticulo;
         private System.Windows.Forms.Label lblPrecioArticulo;
         private System.Windows.Forms.Label lblMarcaArticulo;
@@ -270,7 +235,6 @@
         private System.Windows.Forms.Button btnAltaArticulo;
         private System.Windows.Forms.Button btnCancelarAltaArticulo;
         private System.Windows.Forms.PictureBox pbxAltaArticulo;
-        private System.Windows.Forms.Button btnImagenArticulo;
         private System.Windows.Forms.Label lblTituloAltaArticulo;
     }
 }

@@ -58,7 +58,6 @@ namespace TPWinForm_equipo_8A
 
 
 
-                    pbxAltaArticulo.Load(txtImagenArticulo.Text);
                 }
             }
             catch (Exception ex)
@@ -79,7 +78,6 @@ namespace TPWinForm_equipo_8A
             try
             {
                 if (articulo == null) articulo = new Articulo();
-                //if (articulo.ImagenUrl == null) articulo.ImagenUrl = new Imagen();
 
                 if (string.IsNullOrWhiteSpace(txtCodigoArticulo.Text))
                 {
