@@ -64,7 +64,7 @@ namespace TPWinForm_equipo_8A
             {
                 if (dgvListaArticulos.CurrentRow == null)
                 {
-                    MessageBox.Show("Selecciona una Marca.");
+                    MessageBox.Show("Selecciona un Articulo.");
                     return;
                 }
 
