@@ -22,5 +22,10 @@ namespace TPWinForm_equipo_8A
             InitializeComponent();
             this.idArchivo = idArchivo;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
