@@ -115,10 +115,6 @@ namespace TPWinForm_equipo_8A
             }
         }
 
-        private void dgvListaArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
@@ -128,7 +124,5 @@ namespace TPWinForm_equipo_8A
                 cargarImagen(seleccionado.ImagenUrl.ImagenUrl);
             }
         }
-
-       
     }
 }

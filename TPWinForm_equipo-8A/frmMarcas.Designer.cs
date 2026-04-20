@@ -65,7 +65,7 @@
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(97, 30);
             this.btnCrear.TabIndex = 2;
-            this.btnCrear.Text = "Crear";
+            this.btnCrear.Text = "Agregar";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 

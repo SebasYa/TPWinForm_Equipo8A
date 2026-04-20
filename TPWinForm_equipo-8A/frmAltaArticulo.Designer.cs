@@ -201,6 +201,7 @@
             this.btnImagenArticulo.TabIndex = 17;
             this.btnImagenArticulo.Text = "+";
             this.btnImagenArticulo.UseVisualStyleBackColor = true;
+            this.btnImagenArticulo.Click += new System.EventHandler(this.btnImagenArticulo_Click);
             // 
             // lblTituloAltaArticulo
             // 

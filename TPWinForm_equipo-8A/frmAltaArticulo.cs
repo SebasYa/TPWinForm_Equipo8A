@@ -104,8 +104,8 @@ namespace TPWinForm_equipo_8A
                 }
                 else
                 {
-                    negocio.agregar(articulo);
-                    MessageBox.Show("Agregado Exitosamente!!!");
+                    //negocio.agregar(articulo);
+                    //MessageBox.Show("Agregado Exitosamente!!!");
                 }
                 this.Close();
             }
@@ -114,6 +114,11 @@ namespace TPWinForm_equipo_8A
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnImagenArticulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
