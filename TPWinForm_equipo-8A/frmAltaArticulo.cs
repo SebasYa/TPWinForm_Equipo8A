@@ -34,6 +34,8 @@ namespace TPWinForm_equipo_8A
         {
             MarcaNegocio marcaN = new MarcaNegocio();
             CategoriaNegocio categoriaN = new CategoriaNegocio();
+            ImagenNegocio imagenN = new ImagenNegocio();
+
             try
             {
                 cbxMarcaArticulo.DataSource = marcaN.listar();
@@ -49,11 +51,12 @@ namespace TPWinForm_equipo_8A
                     txtCodigoArticulo.Text = articulo.Codigo;
                     txtNombreArticulo.Text = articulo.Nombre;
                     txtDescripcionArticulo.Text = articulo.Descripcion;
-                    txtImagenArticulo.Text = articulo.ImagenUrl.ImagenUrl;
                     txtPrecioArticulo.Text = articulo.Precio.ToString();
 
                     cbxMarcaArticulo.SelectedValue = articulo.Marca.Descripcion;
                     cbxCategoriaArticulo.SelectedValue = articulo.Categoria.Descripcion;
+
+
 
                     pbxAltaArticulo.Load(txtImagenArticulo.Text);
                 }
@@ -76,7 +79,7 @@ namespace TPWinForm_equipo_8A
             try
             {
                 if (articulo == null) articulo = new Articulo();
-                if (articulo.ImagenUrl == null) articulo.ImagenUrl = new Imagen();
+                //if (articulo.ImagenUrl == null) articulo.ImagenUrl = new Imagen();
 
                 if (string.IsNullOrWhiteSpace(txtCodigoArticulo.Text))
                 {
@@ -88,10 +91,10 @@ namespace TPWinForm_equipo_8A
                     MessageBox.Show("Debe ingresar un Nombre.");
                     return;
                 }
+
                 articulo.Codigo = txtCodigoArticulo.Text;
                 articulo.Nombre = txtNombreArticulo.Text;
                 articulo.Descripcion = txtDescripcionArticulo.Text;
-                articulo.ImagenUrl.ImagenUrl = txtImagenArticulo.Text;
                 articulo.Precio = decimal.Parse(txtPrecioArticulo.Text);
 
                 articulo.Marca = (Marca)cbxMarcaArticulo.SelectedItem;
@@ -101,11 +104,19 @@ namespace TPWinForm_equipo_8A
                 {
                     negocio.modificar(articulo);
                     MessageBox.Show("Modificado Exitosamente!");
+                    this.Close();
                 }
                 else
                 {
-                    //negocio.agregar(articulo);
-                    //MessageBox.Show("Agregado Exitosamente!!!");
+                    int idNuevoArticulo = negocio.agregar(articulo);
+
+                    DialogResult respuesta = MessageBox.Show("El articulo fue creado exitosamente.\n\n¿Desea asignarle una imagen ahora?", "Asignar Imagen", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(respuesta == DialogResult.Yes)
+                    {
+                        frmAltaImagen ventanaImagen = new frmAltaImagen();
+                        ventanaImagen.ShowDialog();
+                    }
+                    this.Close();
                 }
                 this.Close();
             }

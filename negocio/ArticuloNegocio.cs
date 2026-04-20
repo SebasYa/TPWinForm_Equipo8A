@@ -16,13 +16,14 @@ namespace negocio
 
 			try
 			{
-				datos.setearConsulta("SELECT A.Id, Codigo ,Nombre ,A.Descripcion ,IdMarca ,IdCategoria ,M.Descripcion Marca ,C.Descripcion Categoria ,I.ImagenUrl ,Precio FROM ARTICULOS A, IMAGENES I, CATEGORIAS C, MARCAS M WHERE C.Id = A.IdCategoria AND M.Id = A.IdMarca AND I.IdArticulo = A.Id");
+				datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, M.Descripcion Marca, C.Descripcion Categoria, Precio FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE C.Id = A.IdCategoria AND M.Id = A.IdMarca");
 				datos.ejecutarLectura();
 
 				while (datos.Lector.Read())
 				{
 					Articulo aux = new Articulo();
 					aux.Id = (int)datos.Lector["Id"];
+
                     if (!(datos.Lector["Codigo"] is DBNull))
                         aux.Codigo = (string)datos.Lector["Codigo"];
                     if (!(datos.Lector["Nombre"] is DBNull))
@@ -39,9 +40,9 @@ namespace negocio
                         aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     if (!(datos.Lector["Categoria"] is DBNull))
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    aux.ImagenUrl = new Imagen();
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.ImagenUrl.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    //aux.ImagenUrl = new Imagen();
+                    //if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    //    aux.ImagenUrl.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     if (!(datos.Lector["Precio"] is DBNull))
                         aux.Precio = (decimal)datos.Lector["Precio"];
 
@@ -63,7 +64,7 @@ namespace negocio
             }
         }
 
-        public void agregar(Articulo nuevo)
+        public int agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -81,15 +82,16 @@ namespace negocio
 
 
                 //int idArticulo = Convert.ToInt32(datos.ejecutarScalar());
-                int idArticulo = (int)datos.ejecutarScalar();
+                //int idArticulo = (int)datos.ejecutarScalar();
 
-                datos.setearConsulta(@"INSERT INTO IMAGENES (ImagenUrl, IdArticulo)
-                                       VALUES (@imagen, @IdArticulo)");
+                //datos.setearConsulta(@"INSERT INTO IMAGENES (ImagenUrl, IdArticulo)
+                //                       VALUES (@imagen, @IdArticulo)");
 
-                datos.setearParametro("@imagen", nuevo.ImagenUrl);
-                datos.setearParametro("@IdArticulo", idArticulo);
+                //datos.setearParametro("@imagen", nuevo.ImagenUrl);
+                //datos.setearParametro("@IdArticulo", idArticulo);
 
-                datos.ejecutarAccion();
+                //datos.ejecutarAccion();
+                return Convert.ToInt32(datos.ejecutarScalar());
             }
             catch (Exception ex)
             {

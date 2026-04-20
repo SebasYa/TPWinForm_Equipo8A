@@ -17,6 +17,9 @@ namespace TPWinForm_equipo_8A
     public partial class frmArticulos : Form
     {
         private List<Articulo> listaArticulos;
+        private List<Imagen> listaImagenes;
+        private List<Imagen> imagenesArticuloActual;
+        private int indiceImagenActual = 0;
         public frmArticulos()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace TPWinForm_equipo_8A
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
-
+            cargarDatos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -45,18 +48,34 @@ namespace TPWinForm_equipo_8A
            
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
-            cargarArticulos();
+            cargarDatos();
         }
 
-        private void cargarArticulos()
+        private void cargarDatos()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
             try
             {
                 listaArticulos = negocio.listar();
+                listaImagenes = imagenNegocio.listar();
+
                 dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-                cargarImagen(listaArticulos[0].ImagenUrl.ImagenUrl);
+                imagenesArticuloActual = new List<Imagen>();
+                indiceImagenActual = 0;
+
+                if(listaArticulos.Count > 0)
+                {
+                    Articulo seleccionado = listaArticulos[0];
+                    cargarImagenesDelArticulo(seleccionado.Id);
+                }
+                else
+                {
+                    cargarImagen("");
+                }
+
                 
             }
             catch (Exception ex)
@@ -69,7 +88,32 @@ namespace TPWinForm_equipo_8A
         private void ocultarColumnas()
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
-            dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
+        }
+
+        private void cargarImagenesDelArticulo(int idArticulo)
+        {
+            imagenesArticuloActual = new List<Imagen>();
+
+            foreach (var img in listaImagenes)
+            {
+                if(img.IdArticulo == idArticulo)
+                {
+                    imagenesArticuloActual.Add(img);
+                }
+            }
+
+            indiceImagenActual = 0;
+            mostrarImagenActual();
+        }
+
+        private void mostrarImagenActual()
+        {
+            if(imagenesArticuloActual == null || imagenesArticuloActual.Count == 0)
+            {
+                cargarImagen("");
+                return;
+            }
+            cargarImagen(imagenesArticuloActual[indiceImagenActual].ImagenUrl);
         }
 
         private void cargarImagen(string imagenUrl)
@@ -96,7 +140,7 @@ namespace TPWinForm_equipo_8A
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
-            cargarArticulos();
+            cargarDatos();
             pnlFiltroAvanzado.Visible = false;
             btnFiltroAvanzado.Text = "+ Filtro Avanzado";
         }
@@ -121,8 +165,31 @@ namespace TPWinForm_equipo_8A
             if (dgvListaArticulos.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.ImagenUrl.ImagenUrl);
+                //cargarImagen(seleccionado.ImagenUrl.ImagenUrl);
+                cargarImagenesDelArticulo(seleccionado.Id);
+            }
+        }
+
+        private void btnAnteriorImagen_Click(object sender, EventArgs e)
+        {
+            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0) return;
+            if(indiceImagenActual > 0)
+            {
+                indiceImagenActual--;
+                mostrarImagenActual();
+            }
+        }
+
+
+        private void btnSiguienteImagen_Click(object sender, EventArgs e)
+        {
+            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0) return;
+            if (indiceImagenActual<imagenesArticuloActual.Count - 1)
+            {
+                indiceImagenActual++;
+                mostrarImagenActual();
             }
         }
     }
 }
+

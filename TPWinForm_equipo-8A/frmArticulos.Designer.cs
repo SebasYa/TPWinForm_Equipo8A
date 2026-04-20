@@ -45,6 +45,8 @@
             this.lblCampo = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblErrorImagen = new System.Windows.Forms.Label();
+            this.btnAnteriorImagen = new System.Windows.Forms.Button();
+            this.btnSiguienteImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlFiltroAvanzado.SuspendLayout();
@@ -118,7 +120,7 @@
             // 
             // btnFiltroAvanzado
             // 
-            this.btnFiltroAvanzado.Location = new System.Drawing.Point(804, 321);
+            this.btnFiltroAvanzado.Location = new System.Drawing.Point(46, 345);
             this.btnFiltroAvanzado.Name = "btnFiltroAvanzado";
             this.btnFiltroAvanzado.Size = new System.Drawing.Size(101, 23);
             this.btnFiltroAvanzado.TabIndex = 7;
@@ -134,7 +136,7 @@
             this.pnlFiltroAvanzado.Controls.Add(this.textBox2);
             this.pnlFiltroAvanzado.Controls.Add(this.lblCriterio);
             this.pnlFiltroAvanzado.Controls.Add(this.lblCampo);
-            this.pnlFiltroAvanzado.Location = new System.Drawing.Point(46, 350);
+            this.pnlFiltroAvanzado.Location = new System.Drawing.Point(46, 374);
             this.pnlFiltroAvanzado.Name = "pnlFiltroAvanzado";
             this.pnlFiltroAvanzado.Size = new System.Drawing.Size(859, 88);
             this.pnlFiltroAvanzado.TabIndex = 8;
@@ -211,12 +213,34 @@
             this.lblErrorImagen.Size = new System.Drawing.Size(0, 13);
             this.lblErrorImagen.TabIndex = 10;
             // 
+            // btnAnteriorImagen
+            // 
+            this.btnAnteriorImagen.Location = new System.Drawing.Point(749, 321);
+            this.btnAnteriorImagen.Name = "btnAnteriorImagen";
+            this.btnAnteriorImagen.Size = new System.Drawing.Size(75, 23);
+            this.btnAnteriorImagen.TabIndex = 11;
+            this.btnAnteriorImagen.Text = "Anterior";
+            this.btnAnteriorImagen.UseVisualStyleBackColor = true;
+            this.btnAnteriorImagen.Click += new System.EventHandler(this.btnAnteriorImagen_Click);
+            // 
+            // btnSiguienteImagen
+            // 
+            this.btnSiguienteImagen.Location = new System.Drawing.Point(830, 321);
+            this.btnSiguienteImagen.Name = "btnSiguienteImagen";
+            this.btnSiguienteImagen.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguienteImagen.TabIndex = 12;
+            this.btnSiguienteImagen.Text = "Siguiente";
+            this.btnSiguienteImagen.UseVisualStyleBackColor = true;
+            this.btnSiguienteImagen.Click += new System.EventHandler(this.btnSiguienteImagen_Click);
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(917, 474);
+            this.Controls.Add(this.btnSiguienteImagen);
+            this.Controls.Add(this.btnAnteriorImagen);
             this.Controls.Add(this.lblErrorImagen);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.pnlFiltroAvanzado);
@@ -262,5 +286,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblErrorImagen;
+        private System.Windows.Forms.Button btnAnteriorImagen;
+        private System.Windows.Forms.Button btnSiguienteImagen;
     }
 }
