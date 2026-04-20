@@ -47,6 +47,8 @@
             this.lblErrorImagen = new System.Windows.Forms.Label();
             this.btnAnteriorImagen = new System.Windows.Forms.Button();
             this.btnSiguienteImagen = new System.Windows.Forms.Button();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblQImagenes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlFiltroAvanzado.SuspendLayout();
@@ -91,7 +93,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(362, 321);
+            this.btnAgregar.Location = new System.Drawing.Point(360, 326);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
@@ -101,7 +103,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(452, 321);
+            this.btnModificar.Location = new System.Drawing.Point(452, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(552, 321);
+            this.btnEliminar.Location = new System.Drawing.Point(552, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
@@ -215,7 +217,7 @@
             // 
             // btnAnteriorImagen
             // 
-            this.btnAnteriorImagen.Location = new System.Drawing.Point(749, 321);
+            this.btnAnteriorImagen.Location = new System.Drawing.Point(749, 326);
             this.btnAnteriorImagen.Name = "btnAnteriorImagen";
             this.btnAnteriorImagen.Size = new System.Drawing.Size(75, 23);
             this.btnAnteriorImagen.TabIndex = 11;
@@ -225,7 +227,7 @@
             // 
             // btnSiguienteImagen
             // 
-            this.btnSiguienteImagen.Location = new System.Drawing.Point(830, 321);
+            this.btnSiguienteImagen.Location = new System.Drawing.Point(830, 326);
             this.btnSiguienteImagen.Name = "btnSiguienteImagen";
             this.btnSiguienteImagen.Size = new System.Drawing.Size(75, 23);
             this.btnSiguienteImagen.TabIndex = 12;
@@ -233,12 +235,34 @@
             this.btnSiguienteImagen.UseVisualStyleBackColor = true;
             this.btnSiguienteImagen.Click += new System.EventHandler(this.btnSiguienteImagen_Click);
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(633, 307);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(155, 15);
+            this.lbl1.TabIndex = 13;
+            this.lbl1.Text = "Cantidad de Imagenes:";
+            // 
+            // lblQImagenes
+            // 
+            this.lblQImagenes.AutoSize = true;
+            this.lblQImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQImagenes.Location = new System.Drawing.Point(795, 308);
+            this.lblQImagenes.Name = "lblQImagenes";
+            this.lblQImagenes.Size = new System.Drawing.Size(41, 15);
+            this.lblQImagenes.TabIndex = 14;
+            this.lblQImagenes.Text = "label1";
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(917, 474);
+            this.Controls.Add(this.lblQImagenes);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnSiguienteImagen);
             this.Controls.Add(this.btnAnteriorImagen);
             this.Controls.Add(this.lblErrorImagen);
@@ -288,5 +312,7 @@
         private System.Windows.Forms.Label lblErrorImagen;
         private System.Windows.Forms.Button btnAnteriorImagen;
         private System.Windows.Forms.Button btnSiguienteImagen;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lblQImagenes;
     }
 }

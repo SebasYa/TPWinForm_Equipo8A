@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -20,6 +21,8 @@ namespace TPWinForm_equipo_8A
         private List<Imagen> listaImagenes;
         private List<Imagen> imagenesArticuloActual;
         private int indiceImagenActual = 0;
+        private int imagenActual = 0;
+        private int cantidadDeImagenes = 0;
         public frmArticulos()
         {
             InitializeComponent();
@@ -51,6 +54,10 @@ namespace TPWinForm_equipo_8A
             cargarDatos();
         }
 
+        private void ocultarColumnas()
+        {
+            dgvListaArticulos.Columns["Id"].Visible = false;
+        }
         private void cargarDatos()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -63,20 +70,18 @@ namespace TPWinForm_equipo_8A
 
                 dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-                imagenesArticuloActual = new List<Imagen>();
+                //imagenesArticuloActual = new List<Imagen>();
                 indiceImagenActual = 0;
 
-                if(listaArticulos.Count > 0)
+                if (listaArticulos.Count > 0)
                 {
                     Articulo seleccionado = listaArticulos[0];
                     cargarImagenesDelArticulo(seleccionado.Id);
                 }
-                else
-                {
-                    cargarImagen("");
-                }
-
-                
+                //else
+                //{
+                //    cargarImagen("");
+                //}
             }
             catch (Exception ex)
             {
@@ -85,10 +90,6 @@ namespace TPWinForm_equipo_8A
             }
         }
 
-        private void ocultarColumnas()
-        {
-            dgvListaArticulos.Columns["Id"].Visible = false;
-        }
 
         private void cargarImagenesDelArticulo(int idArticulo)
         {
@@ -108,12 +109,19 @@ namespace TPWinForm_equipo_8A
 
         private void mostrarImagenActual()
         {
-            if(imagenesArticuloActual == null || imagenesArticuloActual.Count == 0)
+            cantidadDeImagenes = imagenesArticuloActual.Count;
+            if(imagenesArticuloActual == null || cantidadDeImagenes == 0)
             {
                 cargarImagen("");
+                imagenActual = 0;
+                lblQImagenes.Text = imagenActual + "/" + cantidadDeImagenes;
                 return;
             }
             cargarImagen(imagenesArticuloActual[indiceImagenActual].ImagenUrl);
+
+            imagenActual = indiceImagenActual + 1;
+
+            lblQImagenes.Text = imagenActual + "/" + cantidadDeImagenes;
         }
 
         private void cargarImagen(string imagenUrl)
@@ -133,7 +141,6 @@ namespace TPWinForm_equipo_8A
             catch (Exception)
             {
                 lblErrorImagen.Text = "Articulo sin Imagen";
-                //lblErrorImagen.Text = "";
                 pbxImagen.Load(placeholder);
             }
         }
@@ -165,7 +172,6 @@ namespace TPWinForm_equipo_8A
             if (dgvListaArticulos.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-                //cargarImagen(seleccionado.ImagenUrl.ImagenUrl);
                 cargarImagenesDelArticulo(seleccionado.Id);
             }
         }
