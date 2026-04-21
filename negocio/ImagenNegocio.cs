@@ -49,7 +49,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenesUrl) VALUES (@idArticulo, @imagen");
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@idArticulo, @imagen)");
                 datos.setearParametro("@idArticulo", nueva.IdArticulo);
                 datos.setearParametro("@imagen", nueva.ImagenUrl);
                 datos.ejecutarAccion();
