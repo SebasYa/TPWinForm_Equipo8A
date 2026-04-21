@@ -26,8 +26,8 @@ namespace TPWinForm_equipo_8A
         {
             InitializeComponent();
             this.articulo = articulo;
-            Text = "Modificar Articulo";
-            lblTituloAltaArticulo.Text = "Modificar Articulo";
+            //Text = "Modificar Articulo";
+            //lblTituloAltaArticulo.Text = "Modificar Articulo";
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -46,6 +46,9 @@ namespace TPWinForm_equipo_8A
                 cbxCategoriaArticulo.ValueMember = "Descripcion";
                 cbxCategoriaArticulo.DisplayMember = "Categoria";
 
+                lblModifImagen.Visible = false;
+                btnModifImagen.Visible = false;
+
                 if(articulo != null)
                 {
                     txtCodigoArticulo.Text = articulo.Codigo;
@@ -56,7 +59,10 @@ namespace TPWinForm_equipo_8A
                     cbxMarcaArticulo.SelectedValue = articulo.Marca.Descripcion;
                     cbxCategoriaArticulo.SelectedValue = articulo.Categoria.Descripcion;
 
-
+                    lblModifImagen.Visible = true;
+                    btnModifImagen.Visible = true;
+                    lblTituloAltaArticulo.Text = "Modificar Artículo";
+                    Text = "Modificar Articulo";
 
                 }
             }
@@ -128,6 +134,20 @@ namespace TPWinForm_equipo_8A
         private void btnImagenArticulo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModifImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAltaImagen ventanaImagen = new frmAltaImagen(articulo.Id);
+                ventanaImagen.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

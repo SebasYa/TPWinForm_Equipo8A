@@ -42,9 +42,9 @@
             this.lblCategoriaArticulo = new System.Windows.Forms.Label();
             this.btnAltaArticulo = new System.Windows.Forms.Button();
             this.btnCancelarAltaArticulo = new System.Windows.Forms.Button();
-            this.pbxAltaArticulo = new System.Windows.Forms.PictureBox();
             this.lblTituloAltaArticulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAltaArticulo)).BeginInit();
+            this.btnModifImagen = new System.Windows.Forms.Button();
+            this.lblModifImagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreArticulo
@@ -147,7 +147,7 @@
             // 
             // btnAltaArticulo
             // 
-            this.btnAltaArticulo.Location = new System.Drawing.Point(37, 336);
+            this.btnAltaArticulo.Location = new System.Drawing.Point(39, 358);
             this.btnAltaArticulo.Name = "btnAltaArticulo";
             this.btnAltaArticulo.Size = new System.Drawing.Size(75, 23);
             this.btnAltaArticulo.TabIndex = 7;
@@ -157,7 +157,7 @@
             // 
             // btnCancelarAltaArticulo
             // 
-            this.btnCancelarAltaArticulo.Location = new System.Drawing.Point(157, 336);
+            this.btnCancelarAltaArticulo.Location = new System.Drawing.Point(157, 358);
             this.btnCancelarAltaArticulo.Name = "btnCancelarAltaArticulo";
             this.btnCancelarAltaArticulo.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarAltaArticulo.TabIndex = 8;
@@ -165,33 +165,45 @@
             this.btnCancelarAltaArticulo.UseVisualStyleBackColor = true;
             this.btnCancelarAltaArticulo.Click += new System.EventHandler(this.btnCancelarAltaArticulo_Click);
             // 
-            // pbxAltaArticulo
-            // 
-            this.pbxAltaArticulo.Location = new System.Drawing.Point(294, 65);
-            this.pbxAltaArticulo.Name = "pbxAltaArticulo";
-            this.pbxAltaArticulo.Size = new System.Drawing.Size(167, 294);
-            this.pbxAltaArticulo.TabIndex = 16;
-            this.pbxAltaArticulo.TabStop = false;
-            // 
             // lblTituloAltaArticulo
             // 
             this.lblTituloAltaArticulo.AutoSize = true;
             this.lblTituloAltaArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(366, 9);
+            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(60, 20);
             this.lblTituloAltaArticulo.MinimumSize = new System.Drawing.Size(147, 20);
             this.lblTituloAltaArticulo.Name = "lblTituloAltaArticulo";
             this.lblTituloAltaArticulo.Size = new System.Drawing.Size(147, 20);
             this.lblTituloAltaArticulo.TabIndex = 18;
             this.lblTituloAltaArticulo.Text = "ALTA ARTICULO";
             // 
+            // btnModifImagen
+            // 
+            this.btnModifImagen.Location = new System.Drawing.Point(111, 298);
+            this.btnModifImagen.Name = "btnModifImagen";
+            this.btnModifImagen.Size = new System.Drawing.Size(121, 23);
+            this.btnModifImagen.TabIndex = 19;
+            this.btnModifImagen.Text = "add / modif";
+            this.btnModifImagen.UseVisualStyleBackColor = true;
+            this.btnModifImagen.Click += new System.EventHandler(this.btnModifImagen_Click);
+            // 
+            // lblModifImagen
+            // 
+            this.lblModifImagen.AutoSize = true;
+            this.lblModifImagen.Location = new System.Drawing.Point(36, 303);
+            this.lblModifImagen.Name = "lblModifImagen";
+            this.lblModifImagen.Size = new System.Drawing.Size(42, 13);
+            this.lblModifImagen.TabIndex = 20;
+            this.lblModifImagen.Text = "Imagen";
+            // 
             // frmAltaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(525, 374);
+            this.ClientSize = new System.Drawing.Size(278, 402);
+            this.Controls.Add(this.lblModifImagen);
+            this.Controls.Add(this.btnModifImagen);
             this.Controls.Add(this.lblTituloAltaArticulo);
-            this.Controls.Add(this.pbxAltaArticulo);
             this.Controls.Add(this.btnCancelarAltaArticulo);
             this.Controls.Add(this.btnAltaArticulo);
             this.Controls.Add(this.cbxCategoriaArticulo);
@@ -206,13 +218,12 @@
             this.Controls.Add(this.lblCodigoArticulo);
             this.Controls.Add(this.txtNombreArticulo);
             this.Controls.Add(this.lblNombreArticulo);
-            this.MaximumSize = new System.Drawing.Size(541, 413);
-            this.MinimumSize = new System.Drawing.Size(541, 413);
+            this.MaximumSize = new System.Drawing.Size(294, 441);
+            this.MinimumSize = new System.Drawing.Size(294, 441);
             this.Name = "frmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAltaArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +245,8 @@
         private System.Windows.Forms.Label lblCategoriaArticulo;
         private System.Windows.Forms.Button btnAltaArticulo;
         private System.Windows.Forms.Button btnCancelarAltaArticulo;
-        private System.Windows.Forms.PictureBox pbxAltaArticulo;
         private System.Windows.Forms.Label lblTituloAltaArticulo;
+        private System.Windows.Forms.Button btnModifImagen;
+        private System.Windows.Forms.Label lblModifImagen;
     }
 }
