@@ -17,6 +17,7 @@ namespace TPWinForm_equipo_8A
         private int idArchivo;
         private bool modificado;
         List<Imagen> listaImg = new List<Imagen>();
+        List<Imagen> imagenesArticuloActual;
         Imagen seleccionado;
         public frmAltaImagen()
         {
@@ -36,11 +37,17 @@ namespace TPWinForm_equipo_8A
 
         private void frmAltaImagen_Load(object sender, EventArgs e)
         {
+            ImagenNegocio imagenN = new ImagenNegocio();
             try
             {
                btnEliminarAltaImagen.Enabled = false;
                btnModificarAltaImagen.Enabled=false;
+               listaImg = imagenN.listar(this.idArchivo);
 
+               if (listaImg.Count > 0)
+               {
+                   refrescarGrilla();
+               }
             }
             catch (Exception ex)
             {
@@ -125,6 +132,21 @@ namespace TPWinForm_equipo_8A
             }
         }
 
+        //LISTAR IMAGENES DE ARTICULOS
+        private void cargarImagenesDelArticulo(int idArticulo)
+        {
+            imagenesArticuloActual = new List<Imagen>();
+
+            foreach (var img in imagenesArticuloActual)
+            {
+                if (img.IdArticulo == idArticulo)
+                {
+                    listaImg.Add(img);
+                }
+            }
+
+        }
+
         private void refrescarGrilla()
         {
             
@@ -195,9 +217,17 @@ namespace TPWinForm_equipo_8A
 
             try
             {
-                foreach (var item in listaImg)
+               /*foreach (var item in listaImg)
                 {
                     negocio.agregar(item);
+                }*/
+                foreach (var item in listaImg)
+                {
+                    if (item.Id == 0)
+                    {
+                        negocio.agregar(item);
+                    }
+
                 }
 
                 MessageBox.Show("¡Imágenes guardadas con éxito!");
