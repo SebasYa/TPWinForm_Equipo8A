@@ -111,7 +111,7 @@ namespace TPWinForm_equipo_8A
                     DialogResult respuesta = MessageBox.Show("El articulo fue creado exitosamente.\n\n¿Desea asignarle una imagen ahora?", "Asignar Imagen", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if(respuesta == DialogResult.Yes)
                     {
-                        frmAltaImagen ventanaImagen = new frmAltaImagen();
+                        frmAltaImagen ventanaImagen = new frmAltaImagen(idNuevoArticulo);
                         ventanaImagen.ShowDialog();
                     }
                     this.Close();
