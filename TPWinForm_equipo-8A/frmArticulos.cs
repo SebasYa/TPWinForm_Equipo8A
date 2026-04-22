@@ -29,11 +29,6 @@ namespace TPWinForm_equipo_8A
             InitializeComponent();
         }
 
-        private void lblMarca_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();

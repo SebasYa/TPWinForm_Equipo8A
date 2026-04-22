@@ -224,7 +224,6 @@
             this.lblMarca.Size = new System.Drawing.Size(192, 36);
             this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "ARTICULOS";
-            this.lblMarca.Click += new System.EventHandler(this.lblMarca_Click);
             // 
             // lblErrorImagen
             // 

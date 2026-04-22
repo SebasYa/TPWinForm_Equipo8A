@@ -31,7 +31,6 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnImagenes = new System.Windows.Forms.Button();
             this.lklblSY = new System.Windows.Forms.LinkLabel();
             this.lklblMB = new System.Windows.Forms.LinkLabel();
             this.lklblMRB = new System.Windows.Forms.LinkLabel();
@@ -70,16 +69,6 @@
             this.btnCategorias.Text = "CATEGORIAS";
             this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            // 
-            // btnImagenes
-            // 
-            this.btnImagenes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnImagenes.Location = new System.Drawing.Point(359, 159);
-            this.btnImagenes.Name = "btnImagenes";
-            this.btnImagenes.Size = new System.Drawing.Size(168, 73);
-            this.btnImagenes.TabIndex = 3;
-            this.btnImagenes.Text = "IMAGENES";
-            this.btnImagenes.UseVisualStyleBackColor = false;
             // 
             // lklblSY
             // 
@@ -139,7 +128,6 @@
             this.Controls.Add(this.lklblMRB);
             this.Controls.Add(this.lklblMB);
             this.Controls.Add(this.lklblSY);
-            this.Controls.Add(this.btnImagenes);
             this.Controls.Add(this.btnCategorias);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnMarcas);
@@ -156,7 +144,6 @@
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.Button btnCategorias;
-        private System.Windows.Forms.Button btnImagenes;
         private System.Windows.Forms.LinkLabel lklblSY;
         private System.Windows.Forms.LinkLabel lklblMB;
         private System.Windows.Forms.LinkLabel lklblMRB;
