@@ -138,15 +138,37 @@ namespace TPWinForm_equipo_8A
             if(imagenesArticuloActual == null || cantidadDeImagenes == 0)
             {
                 cargarImagen("");
-                imagenActual = 0;
-                lblQImagenes.Text = imagenActual + "/" + cantidadDeImagenes;
+                lblQImagenes.Text = "0";
+                btnAnteriorImagen.Visible = false;
+                btnSiguienteImagen.Visible = false;
                 return;
+            }
+            else
+            {
+                btnAnteriorImagen.Visible = true;
+                btnSiguienteImagen.Visible = true;
             }
             cargarImagen(imagenesArticuloActual[indiceImagenActual].ImagenUrl);
 
             imagenActual = indiceImagenActual + 1;
-
             lblQImagenes.Text = imagenActual + "/" + cantidadDeImagenes;
+            if (imagenActual == 1)
+            {
+                btnAnteriorImagen.Enabled = false;
+            }
+            else
+            {
+                btnAnteriorImagen.Enabled = true;
+            }
+
+            if (imagenActual == cantidadDeImagenes)
+            {
+                btnSiguienteImagen.Enabled = false;
+            }
+            else
+            {
+                btnSiguienteImagen.Enabled = true;
+            }
         }
 
         private void cargarImagen(string imagenUrl)
@@ -209,7 +231,10 @@ namespace TPWinForm_equipo_8A
 
         private void btnAnteriorImagen_Click(object sender, EventArgs e)
         {
-            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0) return;
+            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0) 
+            {
+                btnAnteriorImagen.Visible = false;
+            };
             if(indiceImagenActual > 0)
             {
                 indiceImagenActual--;
@@ -220,8 +245,12 @@ namespace TPWinForm_equipo_8A
 
         private void btnSiguienteImagen_Click(object sender, EventArgs e)
         {
-            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0) return;
-            if (indiceImagenActual<imagenesArticuloActual.Count - 1)
+            if (imagenesArticuloActual == null || imagenesArticuloActual.Count == 0)
+            {
+                btnSiguienteImagen.Visible = false;
+            }
+            ;
+            if (indiceImagenActual < imagenesArticuloActual.Count - 1)
             {
                 indiceImagenActual++;
                 mostrarImagenActual();
