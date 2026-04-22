@@ -79,6 +79,29 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public bool existeCategoria(int idCategoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT TOP 1 Id FROM ARTICULOS WHERE IdCategoria = @id");
+                datos.setearParametro("@id", idCategoria);
+
+                datos.ejecutarLectura();
+
+                return datos.Lector.Read();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();

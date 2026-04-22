@@ -88,6 +88,7 @@
             this.Name = "frmAltaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Categoría";
+            this.Load += new System.EventHandler(this.frmAltaCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

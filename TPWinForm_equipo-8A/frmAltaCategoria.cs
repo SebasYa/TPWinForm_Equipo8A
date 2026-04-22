@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,12 @@ namespace TPWinForm_equipo_8A
         public frmAltaCategoria()
         {
             InitializeComponent();
+        }
+        public frmAltaCategoria(Categoria categoria)
+        {
+            InitializeComponent();
+            this.categoria = categoria;
+            Text = "Modificar Categoria";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -56,6 +63,22 @@ namespace TPWinForm_equipo_8A
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmAltaCategoria_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (categoria != null)
+                {
+                    textBoxCategoria.Text = categoria.Descripcion;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

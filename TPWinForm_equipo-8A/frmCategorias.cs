@@ -43,6 +43,47 @@ namespace TPWinForm_equipo_8A
             cargar();
         }
 
-        
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria;
+            categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            frmAltaCategoria modificar = new frmAltaCategoria(categoria);
+            modificar.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            Categoria categoria;
+            try
+            {
+                if (dgvCategorias.CurrentRow == null)
+                {
+                    MessageBox.Show("Selecciona una Marca.");
+                    return;
+                }
+
+                categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+
+                if (categoriaNegocio.existeCategoria(categoria.Id))
+                {
+                    MessageBox.Show("No se puede eliminar una Categoria que esta asociada a uno o mas Articulos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                DialogResult resp = MessageBox.Show("¿Desea eliminar la categoria?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resp == DialogResult.Yes)
+                {
+                    categoriaNegocio.eliminar(categoria.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
