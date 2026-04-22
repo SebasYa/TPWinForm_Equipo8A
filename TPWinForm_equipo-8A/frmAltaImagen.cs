@@ -176,7 +176,7 @@ namespace TPWinForm_equipo_8A
             {
                 pbxAltaImagen.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxAltaImagen.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }

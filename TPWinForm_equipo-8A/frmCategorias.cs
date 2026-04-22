@@ -81,7 +81,6 @@ namespace TPWinForm_equipo_8A
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }

@@ -175,6 +175,12 @@ namespace TPWinForm_equipo_8A
             cargarDatos();
             pnlFiltroAvanzado.Visible = false;
             btnFiltroAvanzado.Text = "+ Filtro Avanzado";
+            cboCampo.Items.Add("SKU");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoria");
+
+
         }
 
         private void btnFiltroAvanzado_Click(object sender, EventArgs e)
@@ -221,7 +227,6 @@ namespace TPWinForm_equipo_8A
                 mostrarImagenActual();
             }
         }
-
     }
 }
 

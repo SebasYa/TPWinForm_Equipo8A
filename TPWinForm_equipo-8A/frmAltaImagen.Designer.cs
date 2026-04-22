@@ -119,7 +119,7 @@
             // 
             // btnModificarAltaImagen
             // 
-            this.btnModificarAltaImagen.Location = new System.Drawing.Point(396, 197);
+            this.btnModificarAltaImagen.Location = new System.Drawing.Point(396, 196);
             this.btnModificarAltaImagen.Name = "btnModificarAltaImagen";
             this.btnModificarAltaImagen.Size = new System.Drawing.Size(75, 23);
             this.btnModificarAltaImagen.TabIndex = 8;

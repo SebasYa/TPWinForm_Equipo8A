@@ -16,7 +16,7 @@ namespace TPWinForm_equipo_8A
     public partial class frmAltaArticulo : Form
     {
         private Articulo articulo = null;
-        private OpenFileDialog archivo = null;
+        //private OpenFileDialog archivo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -85,14 +85,24 @@ namespace TPWinForm_equipo_8A
             {
                 if (articulo == null) articulo = new Articulo();
 
+                if (string.IsNullOrWhiteSpace(txtNombreArticulo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un Nombre.");
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtCodigoArticulo.Text))
                 {
                     MessageBox.Show("Debe ingresar un Codigo.");
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtNombreArticulo.Text))
+                if (string.IsNullOrWhiteSpace(txtDescripcionArticulo.Text))
                 {
-                    MessageBox.Show("Debe ingresar un Nombre.");
+                    MessageBox.Show("Debe ingresar una Descripcion.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtPrecioArticulo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un Precio.");
                     return;
                 }
 
