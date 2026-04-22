@@ -1,9 +1,10 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using dominio;
 
 namespace negocio
 {
@@ -46,6 +47,45 @@ namespace negocio
             {
                 datos.setearParametro("@descripcion", nueva.Descripcion);
                 datos.setearConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES (@descripcion)");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void modificar( Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = @descripcion WHERE Id = @id");
+                datos.setearParametro("@descripcion", categoria.Descripcion);
+                datos.setearParametro("@id", categoria.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM CATEGORIAS WHERE Id = @id");
+                datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
