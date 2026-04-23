@@ -202,7 +202,7 @@ namespace negocio
                                 consulta += "Precio < " + filtro;
                                 break;
                             default:
-                                consulta += "Precio = " + filtro;
+                                consulta += "ROUND(Precio, 2, 1) = " + filtro;
                                 break;
                         }
                         break;

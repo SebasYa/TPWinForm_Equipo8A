@@ -87,6 +87,7 @@ namespace TPWinForm_equipo_8A
         private void ocultarColumnas()
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
+           dgvListaArticulos.Columns["Precio"].Visible = false;
         }
         private void cargarDatos()
         {
@@ -326,9 +327,7 @@ namespace TPWinForm_equipo_8A
             }
             dgvListaArticulos.DataSource = null;
             dgvListaArticulos.DataSource = listaFiltrada;
-            /*
-            dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";*/
-
+    
             ocultarColumnas();
 
         }
