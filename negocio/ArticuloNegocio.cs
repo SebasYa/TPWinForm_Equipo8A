@@ -190,92 +190,93 @@ namespace negocio
 
                 string consulta = "SELECT A.Id, Codigo, Nombre, A.Descripcion, A.IdMarca, A.IdCategoria,  Precio, M.Descripcion Marca, C.Descripcion Producto FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id = A.IdMarca And C.Id = A.IdCategoria AND ";
 
+                switch (campo)
+                {
+                    case "Precio":
+                        switch (criterio)
+                        {
+                            case "Mayor a":
+                                consulta += "Precio > " + filtro;
+                                break;
+                            case "Menor a":
+                                consulta += "Precio < " + filtro;
+                                break;
+                            default:
+                                consulta += "Precio = " + filtro;
+                                break;
+                        }
+                        break;
 
-                
-                if (campo == "Precio")
-                {
-                    switch (criterio)
-                    {
-                        case "Mayor a":
-                            consulta += "Precio > " + filtro;
-                            break;
-                        case "Menor a":
-                            consulta += "Precio < " + filtro;
-                            break;
-                        default:
-                            consulta += "Precio = " + filtro;
-                            break;
-                    }
-                }
-                else if (campo == "Nombre")
-                {
-                    switch (criterio)
-                    {
-                        case "Comienza con":
-                            consulta += "Nombre like '" + filtro + "%'";
-                            break;
-                        case "Termina con":
-                            consulta += "Nombre like '%" + filtro + "'";
-                            break;
-                        default:
-                            consulta += "Nombre like '%" + filtro + "%'";
-                            break;
-                    }
-                }
-                else if (campo == "Descripción")
-                {
-                    switch (criterio)
-                    {
-                        case "Comienza con":
-                            consulta += $"A.Descripcion like '{filtro}%'";
-                            break;
-                        case "Termina con":
-                            consulta += $"A.Descripcion like '%{filtro}'";
-                            break;
-                        default:
-                            consulta += $"A.Descripcion like '%{filtro}%'";
-                            break;
-                    }
-                }
-                else if (campo == "Marca")
-                {
-                    switch (criterio)
-                    {
-                        case "Comienza con":
-                            consulta += $"M.Descripcion like '{filtro}%'";
-                            break;
-                        case "Termina con":
-                            consulta += $"M.Descripcion like '%{filtro}'";
-                            break;
-                        default:
-                            consulta += $"M.Descripcion like '%{filtro}%'";
-                            break;
-                    }
-                    
-                }
-                else if (campo == "Categoría")
-                {
-                    switch (criterio)
-                    {
-                        case "Comienza con":
-                            consulta += $"C.Descripcion like '{filtro}%'";
-                            break;
-                        case "Termina con":
-                            consulta += $"C.Descripcion like '%{filtro}'";
-                            break;
-                        default:
-                            consulta += $"C.Descripcion like '%{filtro}%'";
-                            break;
-                    }
-                }
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "Nombre like '" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "Nombre like '%" + filtro + "'";
+                                break;
+                            default:
+                                consulta += "Nombre like '%" + filtro + "%'";
+                                break;
+                        }
+                        break;
 
+                    case "Descripcion":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += $"A.Descripcion like '{filtro}%'";
+                                break;
+                            case "Termina con":
+                                consulta += $"A.Descripcion like '%{filtro}'";
+                                break;
+                            default:
+                                consulta += $"A.Descripcion like '%{filtro}%'";
+                                break;
+                        }
+                        break;
 
+                    case "Marca":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += $"M.Descripcion like '{filtro}%'";
+                                break;
+                            case "Termina con":
+                                consulta += $"M.Descripcion like '%{filtro}'";
+                                break;
+                            default:
+                                consulta += $"M.Descripcion like '%{filtro}%'";
+                                break;
+                        }
+                        break;
+
+                    case "Categoria":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += $"C.Descripcion like '{filtro}%'";
+                                break;
+                            case "Termina con":
+                                consulta += $"C.Descripcion like '%{filtro}'";
+                                break;
+                            default:
+                                consulta += $"C.Descripcion like '%{filtro}%'";
+                                break;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
 
                 datos.setearConsulta(consulta);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];

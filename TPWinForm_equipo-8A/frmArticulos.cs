@@ -350,7 +350,7 @@ namespace TPWinForm_equipo_8A
 
                 dgvListaArticulos.DataSource = negocio.filtrarArticulo(campo, criterio, filtro);
 
-                dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
+                //dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
 
             }
             catch (Exception ex)
