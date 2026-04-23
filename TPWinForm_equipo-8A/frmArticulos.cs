@@ -312,7 +312,13 @@ namespace TPWinForm_equipo_8A
             string filtro = txtFiltroRapido.Text;
             if (filtro.Length > 1)
             {
-                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                listaFiltrada = listaArticulos.FindAll(x => 
+                                        x.Codigo.ToUpper().Contains(filtro.ToUpper()) ||
+                                        x.Nombre.ToUpper().Contains(filtro.ToUpper()) || 
+                                        x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || 
+                                        x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || 
+                                        x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper())
+                                        );
             }
             else
             {
