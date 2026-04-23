@@ -197,10 +197,11 @@ namespace TPWinForm_equipo_8A
             cargarDatos();
             pnlFiltroAvanzado.Visible = false;
             btnFiltroAvanzado.Text = "+ Filtro Avanzado";
-            cboCampo.Items.Add("SKU");
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Marca");
-            cboCampo.Items.Add("Categoria");
+            cboCampo.Items.Add("Categoría");
+            cboCampo.Items.Add("Descripción");
+            cboCampo.Items.Add("Precio");
 
 
         }
@@ -256,6 +257,130 @@ namespace TPWinForm_equipo_8A
                 mostrarImagenActual();
             }
         }
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo para filtrar");
+                return true;
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio para filtrar");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(textBoxBuscar.Text))
+                {
+                    MessageBox.Show("Debes cargar el filtro numérico");
+                    return true;
+                }
+                if (!(NumerosDecimales(textBoxBuscar.Text)))
+                {
+                    MessageBox.Show("Solo debe escribir números");
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool NumerosDecimales(string cadena)
+        {
+            int coma = 0;
+            foreach (char caracter in cadena)
+            {
+                {
+                    if (!(char.IsNumber(caracter)))
+                    {
+                        if (caracter == '.')
+                            coma++;
+                        else
+                            return false;
+                    }
+                }
+            }
+            if (coma > 1)
+                return false;
+            else
+                return true;
+        }
+
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltroRapido.Text;
+            if (filtro.Length > 1)
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+            dgvListaArticulos.DataSource = null;
+            dgvListaArticulos.DataSource = listaFiltrada;
+            /*
+            dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";*/
+
+            ocultarColumnas();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+        
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                if (validarFiltro())
+                {
+                    return;
+                }
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = textBoxBuscar.Text;
+
+                dgvListaArticulos.DataSource = negocio.filtrarArticulo(campo, criterio, filtro);
+
+                dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (cboCampo.SelectedItem != null)
+            {
+
+                string opcion = cboCampo.SelectedItem.ToString();
+                if (opcion == "Precio")
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Mayor a");
+                    cboCriterio.Items.Add("Menor a");
+                    cboCriterio.Items.Add("Igual a");
+                }
+                else
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                }
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+            }
+        }
+    
     }
 }
 

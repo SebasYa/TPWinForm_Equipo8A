@@ -40,9 +40,10 @@
             // btnMarcas
             // 
             this.btnMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMarcas.Location = new System.Drawing.Point(102, 159);
+            this.btnMarcas.Location = new System.Drawing.Point(136, 196);
+            this.btnMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Size = new System.Drawing.Size(168, 73);
+            this.btnMarcas.Size = new System.Drawing.Size(224, 90);
             this.btnMarcas.TabIndex = 0;
             this.btnMarcas.Text = "MARCAS";
             this.btnMarcas.UseVisualStyleBackColor = false;
@@ -51,9 +52,10 @@
             // btnArticulos
             // 
             this.btnArticulos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnArticulos.Location = new System.Drawing.Point(350, 27);
+            this.btnArticulos.Location = new System.Drawing.Point(467, 33);
+            this.btnArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnArticulos.Name = "btnArticulos";
-            this.btnArticulos.Size = new System.Drawing.Size(168, 73);
+            this.btnArticulos.Size = new System.Drawing.Size(224, 90);
             this.btnArticulos.TabIndex = 1;
             this.btnArticulos.Text = "ARTICULOS";
             this.btnArticulos.UseVisualStyleBackColor = false;
@@ -62,9 +64,10 @@
             // btnCategorias
             // 
             this.btnCategorias.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCategorias.Location = new System.Drawing.Point(598, 159);
+            this.btnCategorias.Location = new System.Drawing.Point(797, 196);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Size = new System.Drawing.Size(168, 73);
+            this.btnCategorias.Size = new System.Drawing.Size(224, 90);
             this.btnCategorias.TabIndex = 2;
             this.btnCategorias.Text = "CATEGORIAS";
             this.btnCategorias.UseVisualStyleBackColor = false;
@@ -74,9 +77,10 @@
             // 
             this.lklblSY.AutoSize = true;
             this.lklblSY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblSY.Location = new System.Drawing.Point(729, 265);
+            this.lklblSY.Location = new System.Drawing.Point(972, 326);
+            this.lklblSY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lklblSY.Name = "lklblSY";
-            this.lklblSY.Size = new System.Drawing.Size(126, 20);
+            this.lklblSY.Size = new System.Drawing.Size(155, 25);
             this.lklblSY.TabIndex = 7;
             this.lklblSY.TabStop = true;
             this.lklblSY.Text = "Sebastian Yanni";
@@ -86,9 +90,10 @@
             // 
             this.lklblMB.AutoSize = true;
             this.lklblMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblMB.Location = new System.Drawing.Point(709, 298);
+            this.lklblMB.Location = new System.Drawing.Point(945, 367);
+            this.lklblMB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lklblMB.Name = "lklblMB";
-            this.lklblMB.Size = new System.Drawing.Size(146, 20);
+            this.lklblMB.Size = new System.Drawing.Size(184, 25);
             this.lklblMB.TabIndex = 8;
             this.lklblMB.TabStop = true;
             this.lklblMB.Text = "Maximiliano Bianchi";
@@ -98,21 +103,23 @@
             // 
             this.lklblMRB.AutoSize = true;
             this.lklblMRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblMRB.Location = new System.Drawing.Point(668, 331);
+            this.lklblMRB.Location = new System.Drawing.Point(910, 407);
+            this.lklblMRB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lklblMRB.Name = "lklblMRB";
-            this.lklblMRB.Size = new System.Drawing.Size(187, 20);
+            this.lklblMRB.Size = new System.Drawing.Size(217, 25);
             this.lklblMRB.TabIndex = 9;
             this.lklblMRB.TabStop = true;
-            this.lklblMRB.Text = "Marecelo Rearte Becerra";
+            this.lklblMRB.Text = "Marcelo Rearte Becerra";
             this.lklblMRB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblMRB_LinkClicked);
             // 
             // lklblRepo
             // 
             this.lklblRepo.AutoSize = true;
             this.lklblRepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblRepo.Location = new System.Drawing.Point(23, 331);
+            this.lklblRepo.Location = new System.Drawing.Point(31, 407);
+            this.lklblRepo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lklblRepo.Name = "lklblRepo";
-            this.lklblRepo.Size = new System.Drawing.Size(90, 20);
+            this.lklblRepo.Size = new System.Drawing.Size(109, 25);
             this.lklblRepo.TabIndex = 10;
             this.lklblRepo.TabStop = true;
             this.lklblRepo.Text = "Repositorio";
@@ -120,10 +127,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(867, 360);
+            this.ClientSize = new System.Drawing.Size(1156, 443);
             this.Controls.Add(this.lklblRepo);
             this.Controls.Add(this.lklblMRB);
             this.Controls.Add(this.lklblMB);
@@ -131,6 +138,7 @@
             this.Controls.Add(this.btnCategorias);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnMarcas);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
