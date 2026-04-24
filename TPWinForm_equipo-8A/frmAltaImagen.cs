@@ -17,6 +17,7 @@ namespace TPWinForm_equipo_8A
         private int idArchivo;
         private bool modificado;
         List<Imagen> listaImg = new List<Imagen>();
+        List<Imagen> listaEliminados = new List<Imagen>();
         List<Imagen> imagenesArticuloActual;
         Imagen seleccionado;
         public frmAltaImagen()
@@ -101,6 +102,9 @@ namespace TPWinForm_equipo_8A
                 Imagen seleccionado = (Imagen)dgvAltaImagen.CurrentRow.DataBoundItem;
                 if (seleccionado != null && !string.IsNullOrEmpty(seleccionado.ImagenUrl))
                 {
+                    if (seleccionado.Id != 0)
+                        listaEliminados.Add(seleccionado);
+
                     listaImg.Remove(seleccionado);
                     refrescarGrilla();
                 }
@@ -132,20 +136,6 @@ namespace TPWinForm_equipo_8A
             }
         }
 
-        //LISTAR IMAGENES DE ARTICULOS
-        private void cargarImagenesDelArticulo(int idArticulo)
-        {
-            imagenesArticuloActual = new List<Imagen>();
-
-            foreach (var img in imagenesArticuloActual)
-            {
-                if (img.IdArticulo == idArticulo)
-                {
-                    listaImg.Add(img);
-                }
-            }
-
-        }
 
         private void refrescarGrilla()
         {
@@ -158,6 +148,10 @@ namespace TPWinForm_equipo_8A
             {
                 dgvAltaImagen.DataSource = listaImg;
                 ocultarColumnas();
+            }
+            else
+            {
+                cargarImagen("");
             }
 
             dgvAltaImagen.SelectionChanged += dgvAltaImagen_SelectionChanged;
@@ -214,22 +208,36 @@ namespace TPWinForm_equipo_8A
         private void btnAceptarAltaImagen_Click(object sender, EventArgs e)
         {
             ImagenNegocio negocio = new ImagenNegocio();
+            bool entroEliminado = false;
+            bool entroModificado = false;
+            bool entroAgregado = false;
 
             try
             {
-               /*foreach (var item in listaImg)
+                foreach (var item in listaEliminados)
                 {
-                    negocio.agregar(item);
-                }*/
+                    entroEliminado = true;
+                    negocio.eliminar(item);
+                }
+
                 foreach (var item in listaImg)
                 {
                     if (item.Id == 0)
                     {
+                        entroAgregado = true;
                         negocio.agregar(item);
+                    }
+                    else
+                    {
+                        entroModificado = true;
+                        negocio.modificar(item);
                     }
 
                 }
-
+                if((entroEliminado) && (!entroAgregado) && (!entroModificado))
+                {
+                    MessageBox.Show("¡Imágenes eliminadas con éxito!");
+                }
                 MessageBox.Show("¡Imágenes guardadas con éxito!");
                 this.Close();
             }
