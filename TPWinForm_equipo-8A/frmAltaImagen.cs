@@ -100,15 +100,20 @@ namespace TPWinForm_equipo_8A
         {
             try
             {
-                Imagen seleccionado = (Imagen)dgvAltaImagen.CurrentRow.DataBoundItem;
-                if (seleccionado != null && !string.IsNullOrEmpty(seleccionado.ImagenUrl))
+                DialogResult resp = MessageBox.Show("¿Estas seguro que queres eliminar esta imagen?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resp == DialogResult.Yes)
                 {
-                    if (seleccionado.Id != 0)
-                        listaEliminados.Add(seleccionado);
+                    Imagen seleccionado = (Imagen)dgvAltaImagen.CurrentRow.DataBoundItem;
+                    if (seleccionado != null && !string.IsNullOrEmpty(seleccionado.ImagenUrl))
+                    {
+                        if (seleccionado.Id != 0)
+                            listaEliminados.Add(seleccionado);
 
-                    listaImg.Remove(seleccionado);
-                    refrescarGrilla();
+                        listaImg.Remove(seleccionado);
+                        refrescarGrilla();
+                    }
                 }
+               
             }
             catch (Exception ex)
             {
@@ -235,11 +240,20 @@ namespace TPWinForm_equipo_8A
                     }
 
                 }
-                if((entroEliminado) && (!entroAgregado) && (!entroModificado))
+            
+                if (entroEliminado && listaImg.Count == 0)
                 {
-                    MessageBox.Show("¡Imágenes eliminadas con éxito!");
+                    MessageBox.Show("Galería vaciada: Todas las imágenes fueron eliminadas.");
                 }
-                MessageBox.Show("¡Imágenes guardadas con éxito!");
+                else if (!entroEliminado && !entroAgregado && !entroModificado)
+                {
+                    MessageBox.Show("Cerrando sin realizar modificaciones.");
+                }
+                else
+                {
+                    MessageBox.Show("¡Imágenes guardadas con éxito!");
+                }
+
                 this.Close();
             }
             catch (Exception ex)
