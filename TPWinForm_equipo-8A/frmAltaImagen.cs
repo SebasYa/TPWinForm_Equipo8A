@@ -20,6 +20,7 @@ namespace TPWinForm_equipo_8A
         List<Imagen> listaEliminados = new List<Imagen>();
         List<Imagen> imagenesArticuloActual;
         Imagen seleccionado;
+        private OpenFileDialog archivo = null;
         public frmAltaImagen()
         {
             InitializeComponent();
@@ -244,6 +245,20 @@ namespace TPWinForm_equipo_8A
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar: " + ex.ToString());
+            }
+        }
+
+        private void btnAdjuntarAltaImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg; |png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlAltaImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+                //guardo la imagen 
+                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["poke-app"] + archivo.SafeFileName);
             }
         }
     }

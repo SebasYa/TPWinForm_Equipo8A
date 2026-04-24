@@ -77,6 +77,7 @@
             this.btnAdjuntarAltaImagen.TabIndex = 3;
             this.btnAdjuntarAltaImagen.Text = "...";
             this.btnAdjuntarAltaImagen.UseVisualStyleBackColor = true;
+            this.btnAdjuntarAltaImagen.Click += new System.EventHandler(this.btnAdjuntarAltaImagen_Click);
             // 
             // dgvAltaImagen
             // 
