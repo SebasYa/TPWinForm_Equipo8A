@@ -97,5 +97,44 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void modificar(Imagen modificado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @imagen WHERE Id = @id");
+                datos.setearParametro("@id", modificado.Id);
+                datos.setearParametro("@imagen", modificado.ImagenUrl);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminar(Imagen eliminar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE Id = @id");
+                datos.setearParametro("@id", eliminar.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
