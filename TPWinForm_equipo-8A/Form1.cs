@@ -13,6 +13,7 @@ namespace TPWinForm_equipo_8A
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -94,6 +95,11 @@ namespace TPWinForm_equipo_8A
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Text = "TPWinForm_equipo 8A";
         }
     }
 }
