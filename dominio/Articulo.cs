@@ -23,6 +23,35 @@ namespace dominio
         {
             get { return ((int)(Precio * (decimal)100) / (decimal)100).ToString("0.00"); }
         }
+        public Articulo(){ }
+        public Articulo(Articulo art)
+        {
+            if (art == null) return;
+            Id = art.Id;
+            Codigo = art.Codigo;
+            Nombre = art.Nombre;
+            Precio = art.Precio;
+            Marca = art.Marca == null ? null : new Marca { 
+                Id = art.Marca.Id, 
+                Descripcion = art.Marca.Descripcion 
+            };
+            Categoria = art.Categoria == null ? null : new Categoria
+            {
+                Id = art.Categoria.Id,
+                Descripcion = art.Categoria.Descripcion
+            };
+        }
+
+        public bool EsIgual(Articulo _articulo)
+        {
+            if (Codigo != _articulo.Codigo) return false;
+            if (Nombre != _articulo.Nombre) return false;
+            if (Precio != _articulo.Precio) return false;
+            if (Marca.Descripcion != _articulo.Marca.Descripcion) return false;
+            if (Categoria.Descripcion != _articulo.Categoria.Descripcion) return false;
+
+            return true;
+        }
     }
 }
     

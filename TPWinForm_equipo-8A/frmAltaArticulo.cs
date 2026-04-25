@@ -16,16 +16,18 @@ namespace TPWinForm_equipo_8A
     public partial class frmAltaArticulo : Form
     {
         private Articulo articulo = null;
+        private Articulo articuloOriginal = null;
         //private OpenFileDialog archivo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
         }
 
-        public frmAltaArticulo(Articulo articulo)
+        public frmAltaArticulo(Articulo art)
         {
             InitializeComponent();
-            this.articulo = articulo;
+            this.articulo = art;
+            articuloOriginal = new Articulo(art);
             //Text = "Modificar Articulo";
             //lblTituloAltaArticulo.Text = "Modificar Articulo";
         }
@@ -63,7 +65,6 @@ namespace TPWinForm_equipo_8A
                     btnModifImagen.Visible = true;
                     lblTituloAltaArticulo.Text = "Modificar Artículo";
                     Text = "Modificar Articulo";
-
                 }
             }
             catch (Exception ex)
@@ -80,7 +81,8 @@ namespace TPWinForm_equipo_8A
 
         private void btnAltaArticulo_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
+            
+                ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
                 if (articulo == null) articulo = new Articulo();
@@ -114,7 +116,12 @@ namespace TPWinForm_equipo_8A
                 articulo.Marca = (Marca)cbxMarcaArticulo.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoriaArticulo.SelectedItem;
 
-                if (articulo.Id != 0)
+                if (articulo.Id != 0 && articuloOriginal.EsIgual(articulo)) 
+                {
+                    MessageBox.Show("No hubo Modificación alguna");
+                    this.Close();
+                }
+                else if (articulo.Id != 0)
                 {
                     negocio.modificar(articulo);
                     MessageBox.Show("Modificado Exitosamente!");

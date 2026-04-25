@@ -122,6 +122,7 @@
             // 
             // cbxMarcaArticulo
             // 
+            this.cbxMarcaArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcaArticulo.FormattingEnabled = true;
             this.cbxMarcaArticulo.Location = new System.Drawing.Point(111, 180);
             this.cbxMarcaArticulo.Name = "cbxMarcaArticulo";
@@ -130,6 +131,7 @@
             // 
             // cbxCategoriaArticulo
             // 
+            this.cbxCategoriaArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoriaArticulo.FormattingEnabled = true;
             this.cbxCategoriaArticulo.Location = new System.Drawing.Point(111, 220);
             this.cbxCategoriaArticulo.Name = "cbxCategoriaArticulo";
@@ -169,7 +171,7 @@
             // 
             this.lblTituloAltaArticulo.AutoSize = true;
             this.lblTituloAltaArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(60, 20);
+            this.lblTituloAltaArticulo.Location = new System.Drawing.Point(119, 9);
             this.lblTituloAltaArticulo.MinimumSize = new System.Drawing.Size(147, 20);
             this.lblTituloAltaArticulo.Name = "lblTituloAltaArticulo";
             this.lblTituloAltaArticulo.Size = new System.Drawing.Size(147, 20);

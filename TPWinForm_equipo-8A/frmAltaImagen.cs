@@ -195,7 +195,7 @@ namespace TPWinForm_equipo_8A
                 {
                     cargarImagen(seleccionado.ImagenUrl);
                     btnModificarAltaImagen.Enabled = true;
-                    btnEliminarAltaImagen.Enabled=true;
+                    btnEliminarAltaImagen.Enabled = true;
                 }
             }
             catch (Exception ex)
