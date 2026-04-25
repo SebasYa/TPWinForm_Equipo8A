@@ -31,11 +31,12 @@ namespace dominio
             Codigo = art.Codigo;
             Nombre = art.Nombre;
             Precio = art.Precio;
-            Marca = art.Marca == null ? null : new Marca { 
-                Id = art.Marca.Id, 
-                Descripcion = art.Marca.Descripcion 
+            Marca = new Marca
+            {
+                Id = art.Marca.Id,
+                Descripcion = art.Marca.Descripcion
             };
-            Categoria = art.Categoria == null ? null : new Categoria
+            Categoria = new Categoria
             {
                 Id = art.Categoria.Id,
                 Descripcion = art.Categoria.Descripcion
@@ -47,8 +48,8 @@ namespace dominio
             if (Codigo != _articulo.Codigo) return false;
             if (Nombre != _articulo.Nombre) return false;
             if (Precio != _articulo.Precio) return false;
-            if (Marca.Descripcion != _articulo.Marca.Descripcion) return false;
-            if (Categoria.Descripcion != _articulo.Categoria.Descripcion) return false;
+            if (Marca.Id != _articulo.Marca.Id) return false;
+            if (Categoria.Id != _articulo.Categoria.Id) return false;
 
             return true;
         }

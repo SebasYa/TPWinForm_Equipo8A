@@ -22,7 +22,7 @@ namespace negocio
         {           
             try
             {
-                // conexion sebas
+                // conexion MSSQL
                 conexion = new SqlConnection("server=(localdb)\\MSSQLLocalDB; database=CATALOGO_P3_DB; integrated security=true");
                 //conexion sqlExpress
                 conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");

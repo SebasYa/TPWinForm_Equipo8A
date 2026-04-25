@@ -91,9 +91,9 @@
             // 
             // pbxAltaImagen
             // 
-            this.pbxAltaImagen.Location = new System.Drawing.Point(500, 24);
+            this.pbxAltaImagen.Location = new System.Drawing.Point(500, 82);
             this.pbxAltaImagen.Name = "pbxAltaImagen";
-            this.pbxAltaImagen.Size = new System.Drawing.Size(253, 310);
+            this.pbxAltaImagen.Size = new System.Drawing.Size(253, 252);
             this.pbxAltaImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAltaImagen.TabIndex = 5;
             this.pbxAltaImagen.TabStop = false;

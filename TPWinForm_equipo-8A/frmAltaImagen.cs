@@ -18,7 +18,6 @@ namespace TPWinForm_equipo_8A
         private bool modificado;
         List<Imagen> listaImg = new List<Imagen>();
         List<Imagen> listaEliminados = new List<Imagen>();
-        List<Imagen> imagenesArticuloActual;
         Imagen seleccionado;
         private OpenFileDialog archivo = null;
         public frmAltaImagen()
@@ -270,9 +269,6 @@ namespace TPWinForm_equipo_8A
             {
                 txtUrlAltaImagen.Text = archivo.FileName;
                 cargarImagen(archivo.FileName);
-
-                //guardo la imagen 
-                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["poke-app"] + archivo.SafeFileName);
             }
         }
     }
