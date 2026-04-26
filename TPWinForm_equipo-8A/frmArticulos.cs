@@ -262,20 +262,23 @@ namespace TPWinForm_equipo_8A
         {
             if (cboCampo.SelectedIndex < 0)
             {
-                MessageBox.Show("Seleccione un campo para filtrar");
-                return true;
-            }
-            if (cboCriterio.SelectedIndex < 0)
-            {
-                //MessageBox.Show("Seleccione un criterio para filtrar");
-                labelCriterio.ForeColor = Color.Red;
-                labelCriterio.Visible= true;
-
+                lblCampoFalta.ForeColor = Color.Red;
+                lblCampoFalta.Visible = true;
                 return true;
             }
             else
             {
-                labelCriterio.Visible = false;
+                lblCampoFalta.Visible = false;
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                lblCriterioFalta.ForeColor = Color.Red;
+                lblCriterioFalta.Visible= true;
+                return true;
+            }
+            else
+            {
+                lblCriterioFalta.Visible = false;
             }
             if (cboCampo.SelectedItem.ToString() == "Precio")
             {

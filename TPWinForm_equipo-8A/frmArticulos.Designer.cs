@@ -50,7 +50,8 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lblQImagenes = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.labelCriterio = new System.Windows.Forms.Label();
+            this.lblCriterioFalta = new System.Windows.Forms.Label();
+            this.lblCampoFalta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlFiltroAvanzado.SuspendLayout();
@@ -147,7 +148,8 @@
             // 
             // pnlFiltroAvanzado
             // 
-            this.pnlFiltroAvanzado.Controls.Add(this.labelCriterio);
+            this.pnlFiltroAvanzado.Controls.Add(this.lblCampoFalta);
+            this.pnlFiltroAvanzado.Controls.Add(this.lblCriterioFalta);
             this.pnlFiltroAvanzado.Controls.Add(this.btnLimpiar);
             this.pnlFiltroAvanzado.Controls.Add(this.cboCriterio);
             this.pnlFiltroAvanzado.Controls.Add(this.cboCampo);
@@ -298,15 +300,25 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // labelCriterio
+            // lblCriterioFalta
             // 
-            this.labelCriterio.AutoSize = true;
-            this.labelCriterio.Location = new System.Drawing.Point(416, 69);
-            this.labelCriterio.Name = "labelCriterio";
-            this.labelCriterio.Size = new System.Drawing.Size(177, 16);
-            this.labelCriterio.TabIndex = 10;
-            this.labelCriterio.Text = "*Falta seleccionar un Criterio";
-            this.labelCriterio.Visible = false;
+            this.lblCriterioFalta.AutoSize = true;
+            this.lblCriterioFalta.Location = new System.Drawing.Point(416, 69);
+            this.lblCriterioFalta.Name = "lblCriterioFalta";
+            this.lblCriterioFalta.Size = new System.Drawing.Size(177, 16);
+            this.lblCriterioFalta.TabIndex = 10;
+            this.lblCriterioFalta.Text = "*Falta seleccionar un Criterio";
+            this.lblCriterioFalta.Visible = false;
+            // 
+            // lblCampoFalta
+            // 
+            this.lblCampoFalta.AutoSize = true;
+            this.lblCampoFalta.Location = new System.Drawing.Point(124, 69);
+            this.lblCampoFalta.Name = "lblCampoFalta";
+            this.lblCampoFalta.Size = new System.Drawing.Size(179, 16);
+            this.lblCampoFalta.TabIndex = 11;
+            this.lblCampoFalta.Text = "*Falta seleccionar un Campo";
+            this.lblCampoFalta.Visible = false;
             // 
             // frmArticulos
             // 
@@ -369,6 +381,7 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblQImagenes;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Label labelCriterio;
+        private System.Windows.Forms.Label lblCriterioFalta;
+        private System.Windows.Forms.Label lblCampoFalta;
     }
 }
