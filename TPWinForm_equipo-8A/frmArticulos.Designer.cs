@@ -50,6 +50,7 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lblQImagenes = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.labelCriterio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlFiltroAvanzado.SuspendLayout();
@@ -146,6 +147,7 @@
             // 
             // pnlFiltroAvanzado
             // 
+            this.pnlFiltroAvanzado.Controls.Add(this.labelCriterio);
             this.pnlFiltroAvanzado.Controls.Add(this.btnLimpiar);
             this.pnlFiltroAvanzado.Controls.Add(this.cboCriterio);
             this.pnlFiltroAvanzado.Controls.Add(this.cboCampo);
@@ -161,7 +163,9 @@
             // 
             // cboCriterio
             // 
+            this.cboCriterio.BackColor = System.Drawing.SystemColors.Window;
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cboCriterio.FormattingEnabled = true;
             this.cboCriterio.Location = new System.Drawing.Point(419, 41);
             this.cboCriterio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -294,6 +298,16 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // labelCriterio
+            // 
+            this.labelCriterio.AutoSize = true;
+            this.labelCriterio.Location = new System.Drawing.Point(416, 69);
+            this.labelCriterio.Name = "labelCriterio";
+            this.labelCriterio.Size = new System.Drawing.Size(177, 16);
+            this.labelCriterio.TabIndex = 10;
+            this.labelCriterio.Text = "*Falta seleccionar un Criterio";
+            this.labelCriterio.Visible = false;
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -355,5 +369,6 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblQImagenes;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label labelCriterio;
     }
 }
