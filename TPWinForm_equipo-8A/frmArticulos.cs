@@ -260,40 +260,45 @@ namespace TPWinForm_equipo_8A
         }
         private bool validarFiltro()
         {
+            bool validar = false;
             if (cboCampo.SelectedIndex < 0)
             {
                 lblCampoFalta.ForeColor = Color.Red;
                 lblCampoFalta.Visible = true;
-                return true;
+                validar = true;
             }
-            else
+            else 
             {
                 lblCampoFalta.Visible = false;
             }
+
             if (cboCriterio.SelectedIndex < 0)
             {
                 lblCriterioFalta.ForeColor = Color.Red;
                 lblCriterioFalta.Visible= true;
-                return true;
+                validar = true;
             }
-            else
+            else 
             {
                 lblCriterioFalta.Visible = false;
             }
-            if (cboCampo.SelectedItem.ToString() == "Precio")
+
+            //if (cboCampo.SelectedItem.ToString() == "Precio")
+            if (cboCampo.SelectedItem != null && cboCampo.SelectedItem.ToString() == "Precio")
             {
                 if (string.IsNullOrEmpty(textBoxBuscar.Text))
                 {
                     MessageBox.Show("Debes cargar el filtro numérico");
-                    return true;
+                    validar = true;
                 }
                 if (!(NumerosDecimales(textBoxBuscar.Text)))
                 {
                     MessageBox.Show("Solo debe escribir números");
-                    return true;
+                    validar = true;
                 }
+                
             }
-            return false;
+            return validar;
         }
         private bool NumerosDecimales(string cadena)
         {
@@ -371,7 +376,7 @@ namespace TPWinForm_equipo_8A
             
             if (cboCampo.SelectedItem != null)
             {
-
+                cboCriterio.Enabled = true;
                 string opcion = cboCampo.SelectedItem.ToString();
                 if (opcion == "Precio")
                 {

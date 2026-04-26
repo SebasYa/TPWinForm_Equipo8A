@@ -52,6 +52,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblCriterioFalta = new System.Windows.Forms.Label();
             this.lblCampoFalta = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlFiltroAvanzado.SuspendLayout();
@@ -148,6 +149,7 @@
             // 
             // pnlFiltroAvanzado
             // 
+            this.pnlFiltroAvanzado.Controls.Add(this.lblText);
             this.pnlFiltroAvanzado.Controls.Add(this.lblCampoFalta);
             this.pnlFiltroAvanzado.Controls.Add(this.lblCriterioFalta);
             this.pnlFiltroAvanzado.Controls.Add(this.btnLimpiar);
@@ -167,6 +169,7 @@
             // 
             this.cboCriterio.BackColor = System.Drawing.SystemColors.Window;
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.Enabled = false;
             this.cboCriterio.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cboCriterio.FormattingEnabled = true;
             this.cboCriterio.Location = new System.Drawing.Point(419, 41);
@@ -320,6 +323,16 @@
             this.lblCampoFalta.Text = "*Falta seleccionar un Campo";
             this.lblCampoFalta.Visible = false;
             // 
+            // lblText
+            // 
+            this.lblText.AutoSize = true;
+            this.lblText.Location = new System.Drawing.Point(646, 69);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(105, 16);
+            this.lblText.TabIndex = 12;
+            this.lblText.Text = "*Falta completar";
+            this.lblText.Visible = false;
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -383,5 +396,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblCriterioFalta;
         private System.Windows.Forms.Label lblCampoFalta;
+        private System.Windows.Forms.Label lblText;
     }
 }

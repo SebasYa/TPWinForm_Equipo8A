@@ -222,7 +222,7 @@ namespace negocio
                         }
                         break;
 
-                    case "Descripcion":
+                    case "Descripción":
                         switch (criterio)
                         {
                             case "Comienza con":
@@ -252,7 +252,7 @@ namespace negocio
                         }
                         break;
 
-                    case "Categoria":
+                    case "Categoría":
                         switch (criterio)
                         {
                             case "Comienza con":
