@@ -349,8 +349,6 @@ namespace TPWinForm_equipo_8A
 
                 dgvListaArticulos.DataSource = negocio.filtrarArticulo(campo, criterio, filtro);
 
-                //dgvListaArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
-
             }
             catch (Exception ex)
             {
@@ -385,7 +383,14 @@ namespace TPWinForm_equipo_8A
                 cboCriterio.Items.Clear();
             }
         }
-    
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cargarDatos();
+            cboCampo.SelectedIndex = -1;
+            textBoxBuscar.Clear();
+            txtFiltroRapido.Clear();
+        }
     }
 }
 
