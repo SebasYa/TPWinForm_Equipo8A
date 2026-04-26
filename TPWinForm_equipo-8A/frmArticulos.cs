@@ -288,13 +288,19 @@ namespace TPWinForm_equipo_8A
             {
                 if (string.IsNullOrEmpty(textBoxBuscar.Text))
                 {
-                    MessageBox.Show("Debes cargar el filtro numérico");
+                    //MessageBox.Show("Debes cargar el filtro numérico");
+                    lblCriterioFalta.Enabled = true;
                     validar = true;
                 }
+                else
+                {
+                    lblCriterioFalta.Visible = false;
+                }
+
                 if (!(NumerosDecimales(textBoxBuscar.Text)))
                 {
                     MessageBox.Show("Solo debe escribir números");
-                    validar = true;
+                    validar = false;
                 }
                 
             }
@@ -403,6 +409,7 @@ namespace TPWinForm_equipo_8A
         {
             cargarDatos();
             cboCampo.SelectedIndex = -1;
+            cboCriterio.Enabled = false;
             textBoxBuscar.Clear();
             txtFiltroRapido.Clear();
         }
