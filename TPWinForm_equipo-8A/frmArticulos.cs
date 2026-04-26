@@ -288,7 +288,6 @@ namespace TPWinForm_equipo_8A
             {
                 if (string.IsNullOrEmpty(textBoxBuscar.Text))
                 {
-                    //MessageBox.Show("Debes cargar el filtro numérico");
                     lblCriterioFalta.Enabled = true;
                     validar = true;
                 }
@@ -299,8 +298,13 @@ namespace TPWinForm_equipo_8A
 
                 if (!(NumerosDecimales(textBoxBuscar.Text)))
                 {
-                    MessageBox.Show("Solo debe escribir números");
-                    validar = false;
+                    lblNumeros.ForeColor = Color.Red;
+                    lblNumeros.Visible = true;
+                    validar = true;
+                }
+                else
+                {
+                    lblNumeros.Visible = false;
                 }
                 
             }

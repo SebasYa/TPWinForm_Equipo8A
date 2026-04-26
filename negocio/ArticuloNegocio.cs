@@ -193,20 +193,17 @@ namespace negocio
                 switch (campo)
                 {
                     case "Precio":
-                        decimal precio;
-                        if (!decimal.TryParse(filtro, out precio))
-                            throw new Exception("Precio inválido");
 
                         switch (criterio)
                         {
                             case "Mayor a":
-                                consulta += "ROUND(Precio, 2, 1) > " + precio;
+                                consulta += "Precio > " + filtro;
                                 break;
                             case "Menor a":
-                                consulta += "ROUND(Precio, 2, 1) < " + precio;
+                                consulta += "Precio < " + filtro;
                                 break;
                             default:
-                                consulta += "ROUND(Precio, 2, 1) = " + precio;
+                                consulta += "Precio = " + filtro;
                                 break;
                         }
                         break;

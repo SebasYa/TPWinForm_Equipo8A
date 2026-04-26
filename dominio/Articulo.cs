@@ -19,6 +19,7 @@ namespace dominio
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
         [DisplayName("Precio")] 
+
         public string PrecioMostrarFactorizado
         {
             get { return ((int)(Precio * (decimal)100) / (decimal)100).ToString("0.00"); }
