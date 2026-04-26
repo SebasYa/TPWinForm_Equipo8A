@@ -283,12 +283,12 @@ namespace TPWinForm_equipo_8A
                 lblCriterioFalta.Visible = false;
             }
 
-            //if (cboCampo.SelectedItem.ToString() == "Precio")
             if (cboCampo.SelectedItem != null && cboCampo.SelectedItem.ToString() == "Precio")
             {
-                if (string.IsNullOrEmpty(textBoxBuscar.Text))
+                if (cboCriterio.SelectedIndex < 0)
                 {
-                    lblCriterioFalta.Enabled = true;
+                    lblCriterioFalta.ForeColor = Color.Red;
+                    lblCriterioFalta.Visible = true;
                     validar = true;
                 }
                 else
@@ -414,6 +414,7 @@ namespace TPWinForm_equipo_8A
             cargarDatos();
             cboCampo.SelectedIndex = -1;
             cboCriterio.Enabled = false;
+            lblNumeros.Visible= false;
             textBoxBuscar.Clear();
             txtFiltroRapido.Clear();
         }
